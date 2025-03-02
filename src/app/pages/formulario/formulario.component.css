@@ -1,0 +1,98 @@
+.formulario-container {
+    max-width: 650px;
+    margin: 60px auto;
+    padding: 45px 40px;
+    text-align: center;
+    background: linear-gradient(135deg, #03dac6, #ff0266);
+    color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.formulario-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-description {
+    font-size: 1rem;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #fff;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #000;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: #ff0266;
+    box-shadow: 0 0 8px rgba(255, 2, 102, 0.5);
+}
+
+/* Estilos del botón */
+.form-submit-btn {
+    background-color: #ff0266;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.125rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    letter-spacing: 1px;
+    width: 100%;
+}
+
+.form-submit-btn:hover {
+    background-color: #d50056;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .formulario-container {
+        padding: 35px 30px;
+        max-width: 90%;
+    }
+
+    .formulario-title {
+        font-size: 1.75rem;
+    }
+
+    .form-submit-btn {
+        font-size: 1rem;
+    }
+
+    .form-input {
+        padding: 10px;
+    }
+}

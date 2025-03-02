@@ -1,1 +1,42 @@
-<p>formulario works!</p>
+<div class="formulario-container">
+    <h2 class="formulario-title">Únete a Nuestro Marketplace</h2>
+
+    <p class="form-description">
+        Conéctate con clientes que buscan profesionales como tú. Expande tu alcance y aumenta tus oportunidades laborales.
+    </p>
+
+    <form class="formulario">
+        <div class="form-group">
+            <label for="nombre" class="form-label">Nombre Completo</label>
+            <input type="text" id="nombre" class="form-input" name="nombre" placeholder="Ingresa tu nombre">
+        </div>
+
+        <div class="form-group">
+            <label for="email" class="form-label">Correo Electrónico</label>
+            <input type="email" id="email" class="form-input" name="email" placeholder="Ingresa tu correo">
+        </div>
+
+        <div class="form-group">
+            <label for="profesion" class="form-label">Profesión</label>
+            <select id="profesion" class="form-input" name="profesion">
+                <option value="" disabled selected>Selecciona tu profesión</option>
+                <option value="Plomero">Plomero</option>
+                <option value="Electricista">Electricista</option>
+                <option value="Carpintero">Carpintero</option>
+                <option value="Mecánico">Mecánico</option>
+                <option value="Jardinero">Jardinero</option>
+                <option value="Pintor">Pintor</option>
+                <option value="Diseñador Gráfico">Diseñador Gráfico</option>
+                <option value="Desarrollador Web">Desarrollador Web</option>
+                <option value="Contador">Contador</option>
+                <option value="Abogado">Abogado</option>
+                <option value="Chef">Chef</option>
+                <option value="Fotógrafo">Fotógrafo</option>
+                <option value="Profesor Particular">Profesor Particular</option>
+                <option value="Otro">Otro</option>
+            </select>
+        </div>
+
+        <button type="submit" class="form-submit-btn">Suscribirse</button>
+    </form>
+</div>
