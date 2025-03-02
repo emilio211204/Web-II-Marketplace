@@ -1,60 +1,63 @@
+<!-- Agregar esto en el <head> si no lo tienes -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
 <div class="contact-container">
-    <h1>Workana</h1>
-    <p>Déjanos tu consulta y te contactaremos lo antes posible.</p>
+    <h1><i class="fa-solid fa-briefcase"></i> Workana</h1>
+    <p><i class="fa-solid fa-envelope-circle-check"></i> Déjanos tu consulta y te contactaremos lo antes posible.</p>
     
     <form class="contact-form">
-      <div class="form-group">
-        <label for="name">Nombre</label>
-        <input type="text" id="name" placeholder="Tu nombre" required>
-      </div>
-      
-      <div class="form-group">
-        <label for="email">Correo Electrónico</label>
-        <input type="email" id="email" placeholder="Tu correo" required>
-      </div>
-      
-      <div class="form-group">
-        <label for="phone">Teléfono</label>
-        <input type="tel" id="phone" placeholder="Tu teléfono">
-      </div>
-      
-      <div class="form-group">
-        <label for="service">Tipo de servicio</label>
-        <select id="service" required>
-          <option value="">Selecciona un servicio...</option>
-          <option value="desarrollo">Desarrollo Web</option>
-          <option value="diseño">Diseño Gráfico</option>
-          <option value="redaccion">Redacción y Traducción</option>
-          <option value="marketing">Marketing Digital</option>
-          <option value="soporte">Soporte Técnico</option>
-          <option value="otros">Otros</option>
-        </select>
-      </div>
-      
-      <div class="form-group">
-        <label for="budget">Presupuesto estimado</label>
-        <input type="number" id="budget" placeholder="Monto en USD">
-      </div>
-      
-      <div class="form-group">
-        <label for="date">Fecha de entrega deseada</label>
-        <input type="date" id="date">
-      </div>
-      
-      <div class="form-group">
-        <label for="contact-method">Método de contacto preferido</label>
-        <select id="contact-method">
-          <option value="email">Correo Electrónico</option>
-          <option value="whatsapp">WhatsApp</option>
-          <option value="llamada">Llamada Telefónica</option>
-        </select>
-      </div>
-      
-      <div class="form-group">
-        <label for="message">Mensaje</label>
-        <textarea id="message" placeholder="Describe tu necesidad..." required></textarea>
-      </div>
-      
-      <button type="submit">Enviar Mensaje</button>
+        <div class="form-group">
+            <label for="name"><i class="fa-solid fa-user"></i> Nombre</label>
+            <input type="text" id="name" placeholder="Tu nombre" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="email"><i class="fa-solid fa-envelope"></i> Correo Electrónico</label>
+            <input type="email" id="email" placeholder="Tu correo" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="phone"><i class="fa-solid fa-phone"></i> Teléfono</label>
+            <input type="tel" id="phone" placeholder="Tu teléfono">
+        </div>
+        
+        <div class="form-group">
+            <label for="service"><i class="fa-solid fa-briefcase"></i> Tipo de servicio</label>
+            <select id="service" required>
+                <option value="">Selecciona un servicio...</option>
+                <option value="desarrollo">Desarrollo Web</option>
+                <option value="diseño">Diseño Gráfico</option>
+                <option value="redaccion">Redacción y Traducción</option>
+                <option value="marketing">Marketing Digital</option>
+                <option value="soporte">Soporte Técnico</option>
+                <option value="otros">Otros</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="budget"><i class="fa-solid fa-dollar-sign"></i> Presupuesto estimado</label>
+            <input type="number" id="budget" placeholder="Monto en USD">
+        </div>
+        
+        <div class="form-group">
+            <label for="date"><i class="fa-solid fa-calendar-days"></i> Fecha de entrega deseada</label>
+            <input type="date" id="date">
+        </div>
+        
+        <div class="form-group">
+            <label for="contact-method"><i class="fa-solid fa-comments"></i> Método de contacto preferido</label>
+            <select id="contact-method">
+                <option value="email">Correo Electrónico</option>
+                <option value="whatsapp">WhatsApp</option>
+                <option value="llamada">Llamada Telefónica</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="message"><i class="fa-solid fa-comment-dots"></i> Mensaje</label>
+            <textarea id="message" placeholder="Describe tu necesidad..." required></textarea>
+        </div>
+        
+        <button type="submit"><i class="fa-solid fa-paper-plane"></i> Enviar Mensaje</button>
     </form>
 </div>
