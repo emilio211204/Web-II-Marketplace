@@ -101,4 +101,12 @@
   .loader span:nth-child(n) {
     -webkit-animation-delay: calc(0.1s * (n - 1));
   }
+
+.logo-icon {
+    width: 200px; 
+    height: auto;
+    margin-right: 10px;
+    vertical-align: middle; 
+}
+
   
