@@ -1,0 +1,232 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7fc; /* Color de fondo más claro */
+    color: #333; /* Color de texto más oscuro para mejor legibilidad */
+    line-height: 1.7;
+}
+
+/* CONTAINER PRINCIPAL */
+.nosotros-container {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+/* HEADER */
+.header {
+    background: url('https://emprendepyme.net/wp-content/uploads/2023/03/clasificacion-equipos-trabajo.jpg') no-repeat center/cover;
+    color: white;
+    padding: 8rem 2rem;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+.header h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.header p {
+    font-size: 1.4rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* SECCIÓN DE TARJETAS */
+.content {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    border-bottom: 5px solid #028f8a;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+    color: #028f8a;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card ul li {
+    background: url('https://img.icons8.com/ios-glyphs/30/028f8a/checkmark.png') no-repeat left center;
+    padding-left: 40px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    color: #444;
+}
+
+/* SECCIÓN "¿POR QUÉ ELEGIRNOS?" */
+.why-choose-us {
+    margin-top: 4rem;
+    padding: 3rem;
+    background: linear-gradient(to right, #03dac6, #ff0266);
+    border-radius: 20px;
+    color: white;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.why-choose-us h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.benefits {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.benefit {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    width: 30%;
+    text-align: center;
+    color: #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.benefit:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.benefit img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+}
+
+.benefit h3 {
+    font-size: 1.7rem;
+    color: #028f8a;
+    margin-bottom: 1rem;
+}
+
+/* SECCIÓN DE SERVICIOS */
+.services {
+    margin-top: 4rem;
+    padding: 3rem;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.services h2 {
+    font-size: 2.2rem;
+    color: #028f8a;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.service-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    width: 22%;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    color: #028f8a;
+    margin-bottom: 1rem;
+}
+
+/* SECCIÓN DE BENEFICIOS PARA PROFESIONALES */
+.benefits-for-professionals {
+    margin-top: 4rem;
+    padding: 3rem;
+    background: #f4f7fc;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.benefits-for-professionals h2 {
+    font-size: 2.2rem;
+    color: #028f8a;
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.benefits-for-professionals p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    text-align: center;
+}
+
+.benefits-for-professionals .benefits {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.benefits-for-professionals .benefit {
+    width: 30%;
+    margin-bottom: 2rem;
+}
+
+.benefits-for-professionals .benefit h3 {
+    font-size: 1.7rem;
+    color: #028f8a;
+    margin-bottom: 1rem;
+}
