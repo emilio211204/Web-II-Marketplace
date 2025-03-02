@@ -1,112 +1,113 @@
 /* Reset básico */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: "ROBOTO", sans-serif;
-    background-color: #ebecf1;
-    color: #faebd7;
-  }
-  
-  /* Navbar */
-  nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 100;
-  }
-  
-  nav .logo {
-    font-size: 26px;
-    font-weight: bold;
-    color: #03dac6;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  nav .logo:hover {
-    color: #ff0266;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-  }
-  
-  nav ul li a {
-    text-decoration: none;
-    color: #03dac6;
-    font-weight: 500;
-    padding: 12px 18px;
-    border-radius: 8px;
-    transition: background 0.3s, color 0.3s;
-  }
-  
-  nav ul li a:hover {
-    background-color: #03dac6;
-    color: #1e1f26;
-  }
-  
-  /* Botones */
-  .btn {
-    background-color: #03dac6;
-    color: #1e1f26;
-    padding: 12px 18px;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: background 0.3s;
-  }
-  
-  .btn:hover {
-    background-color: #028f8a;
-    color: #fff;
-  }
-  
-  .login-button {
-    background-color: #ff0266;
-    color: #fff;
-    padding: 12px 18px;
-    border-radius: 8px;
-    font-weight: 600;
-    transition: background 0.3s;
-  }
-  
-  .login-button:hover {
-    background-color: #cc4627;
-  }
-  
-  /* Animaciones */
-  @-webkit-keyframes loading {
-    to {
-      text-shadow: 20px 0 70px #ff0266;
-      color: #ff0266;
-    }
-  }
-  
-  .loader span {
-    color: #faebd7;
-    text-shadow: 0 0 0 #faebd7;
-    -webkit-animation: loading 1s ease-in-out infinite alternate;
-  }
-  
-  .loader span:nth-child(n) {
-    -webkit-animation-delay: calc(0.1s * (n - 1));
-  }
-
-.logo-icon {
-    width: 200px; 
-    height: auto;
-    margin-right: 10px;
-    vertical-align: middle; 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-  
+body {
+  font-family: "ROBOTO", sans-serif;
+  background-color: #ebecf1;
+  color: #faebd7;
+  /* El padding-top asegura que el contenido no se superponga con el nav */
+  padding-top: 60px; /* Ajusté el valor para que el contenido no quede cubierto por el nav */
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: fixed; /* Hace que el nav se quede fijo al hacer scroll */
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  background-color: #ebecf1; /* Fondo del nav */
+}
+
+nav .logo {
+  font-size: 26px;
+  font-weight: bold;
+  color: #03dac6;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav .logo:hover {
+  color: #ff0266;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #03dac6;
+  font-weight: 500;
+  padding: 12px 18px;
+  border-radius: 8px;
+  transition: background 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #03dac6;
+  color: #1e1f26;
+}
+
+/* Botones */
+.btn {
+  background-color: #03dac6;
+  color: #1e1f26;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #028f8a;
+  color: #fff;
+}
+
+.login-button {
+  background-color: #ff0266;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.login-button:hover {
+  background-color: #cc4627;
+}
+
+/* Animaciones */
+@-webkit-keyframes loading {
+  to {
+      text-shadow: 20px 0 70px #ff0266;
+      color: #ff0266;
+  }
+}
+
+.loader span {
+  color: #faebd7;
+  text-shadow: 0 0 0 #faebd7;
+  -webkit-animation: loading 1s ease-in-out infinite alternate;
+}
+
+.loader span:nth-child(n) {
+  -webkit-animation-delay: calc(0.1s * (n - 1));
+}
+
+.logo-icon {
+  width: 200px; 
+  height: auto;
+  margin-right: 10px;
+  vertical-align: middle; 
+}
