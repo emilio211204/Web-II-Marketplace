@@ -292,4 +292,9 @@ p {
     padding: 14px 16px;
     font-size: 14px;
   }
+  .form-submit-btn i {
+    margin-right: 8px; /* Espacio entre el icono y el texto */
+    font-size: 18px;
+}
+
 }
