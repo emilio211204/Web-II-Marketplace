@@ -7,13 +7,15 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f4f7fc; /* Color de fondo más claro */
-    color: #333; /* Color de texto más oscuro para mejor legibilidad */
+    background-color: #f4f7fc; /* Manteniendo color original */
+    color: #333; /* Manteniendo color original */
     line-height: 1.7;
 }
 
 /* CONTAINER PRINCIPAL */
 .nosotros-container {
+    max-width: 1280px;
+    margin: 0 auto;
     padding: 4rem 2rem;
     text-align: center;
 }
@@ -24,15 +26,35 @@ body {
     color: white;
     padding: 8rem 2rem;
     text-align: center;
-    border-radius: 12px;
-    box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(6, 190, 182, 0.5), 0 10px 30px rgba(72, 177, 191, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Overlay oscuro para mejor legibilidad */
+    z-index: 1;
+}
+
+.header h1, .header p {
+    position: relative;
+    z-index: 2;
 }
 
 .header h1 {
     font-size: 4rem;
-    font-weight: bold;
+    font-weight: 800;
     margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+    color: black;
+    text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.6); 
+    letter-spacing: 0.5px;
 }
 
 .header p {
@@ -40,7 +62,7 @@ body {
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.9); /* Manteniendo color similar al original */
 }
 
 /* SECCIÓN DE TARJETAS */
@@ -48,63 +70,189 @@ body {
     display: flex;
     justify-content: center;
     gap: 2rem;
-    margin-top: 3rem;
+    margin-top: 3.5rem;
     flex-wrap: wrap;
+    background: linear-gradient(to right, #03dac6, #ff0266);
+    padding: 4rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .card {
     background: white;
     padding: 2.5rem;
     border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
     width: 30%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
     text-align: center;
-    border-bottom: 5px solid #028f8a;
+    border-bottom: 5px solid #028f8a; /* Manteniendo color original */
+    position: relative;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #028f8a; /* Manteniendo color original */
+    border-radius: 15px 15px 0 0;
 }
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
 .card h2 {
-    color: #028f8a;
+    color: #028f8a; /* Manteniendo color original */
     margin-bottom: 1.5rem;
     font-size: 2rem;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.8rem;
+}
+
+.card h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: #028f8a; /* Manteniendo color original */
+    border-radius: 2px;
 }
 
 .card ul {
     list-style: none;
     padding: 0;
+    margin-top: 1.5rem;
 }
 
 .card ul li {
-    background: url('https://img.icons8.com/ios-glyphs/30/028f8a/checkmark.png') no-repeat left center;
-    padding-left: 40px;
-    margin-bottom: 10px;
+    background: url('https://img.icons8.com/ios-glyphs/30/028f8a/checkmark.png') no-repeat left 5px;
+    background-size: 18px;
+    padding-left: 30px;
+    margin-bottom: 12px;
     font-size: 1.2rem;
     color: #444;
+    text-align: left;
+    transition: transform 0.2s ease;
+}
+
+.card ul li:hover {
+    transform: translateX(3px);
 }
 
 /* SECCIÓN "¿POR QUÉ ELEGIRNOS?" */
 .why-choose-us {
-    margin-top: 4rem;
-    padding: 3rem;
-    background: linear-gradient(to right, #03dac6, #ff0266);
+    margin-top: 5rem;
+    padding: 3.5rem 3rem;
+    background: linear-gradient(to right, #03dac6, #ff0266); /* Manteniendo colores originales */
     border-radius: 20px;
     color: white;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     text-align: center;
+    position: relative;
 }
 
 .why-choose-us h2 {
-    font-size: 2.2rem;
-    margin-bottom: 2rem;
+    font-size: 2.4rem;
+    margin-bottom: 2.2rem;
     font-weight: bold;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.8rem;
+}
+
+.why-choose-us h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: white;
+    border-radius: 2px;
 }
 
 .benefits {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.benefit {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    width: 30%;
+    text-align: center;
+    color: #333; /* Manteniendo color original */
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+}
+
+.benefit:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.benefit img {
+    width: 65px;
+    height: 65px;
+    margin-bottom: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.benefit:hover img {
+    transform: scale(1.1);
+}
+
+.benefit h3 {
+    font-size: 1.7rem;
+    color: #028f8a; /* Manteniendo color original */
+    margin-bottom: 1rem;
+    padding-bottom: 0.8rem;
+    position: relative;
+}
+
+.benefit h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: #028f8a; /* Manteniendo color original */
+    border-radius: 2px;
+}
+.benefits-for-professionals {
+    margin-top: 5rem;
+    padding: 3.5rem 3rem;
+    background: linear-gradient(to right, #03dac6, #ff0266);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.benefits-for-professionals h2 {
+    font-size: 2.4rem;
+    color: white;
+    margin-bottom: 2.2rem;
+    font-weight: bold;
+}
+
+.benefits-for-professionals .benefits {
     display: flex;
     justify-content: center;
     gap: 2rem;
@@ -115,118 +263,117 @@ body {
     background: white;
     padding: 2.5rem;
     border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     width: 30%;
     text-align: center;
     color: #333;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.3s ease;
     margin-bottom: 2rem;
 }
 
-.benefit:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+/* MEDIA QUERIES */
+@media (max-width: 1200px) {
+    .card, .benefit, .service-card {
+        width: 45%;
+    }
 }
 
-.benefit img {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 1rem;
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 3rem;
+    }
+    
+    .header p {
+        font-size: 1.2rem;
+    }
+    
+    .card, .benefit, .service-card {
+        width: 100%;
+    }
 }
 
-.benefit h3 {
-    font-size: 1.7rem;
-    color: #028f8a;
-    margin-bottom: 1rem;
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .nosotros-container {
+        padding: 2rem 1rem;
+    }
+    
+    .services, .benefits-for-professionals {
+        padding: 2.5rem 1.5rem;
+    }
 }
 
-/* SECCIÓN DE SERVICIOS */
-.services {
-    margin-top: 4rem;
-    padding: 3rem;
-    background: #fff;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+/* EFECTOS VISUALES ADICIONALES */
+.card, .benefit, .service-card {
+    opacity: 0;
+    animation: fadeIn 0.8s ease forwards;
 }
 
-.services h2 {
-    font-size: 2.2rem;
-    color: #028f8a;
-    margin-bottom: 2rem;
-    font-weight: bold;
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
 }
 
-.services-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
+.card:nth-child(1), .benefit:nth-child(1), .service-card:nth-child(1) {
+    animation-delay: 0.1s;
 }
 
-.service-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-    width: 22%;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.card:nth-child(2), .benefit:nth-child(2), .service-card:nth-child(2) {
+    animation-delay: 0.25s;
 }
 
-.service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+.card:nth-child(3), .benefit:nth-child(3), .service-card:nth-child(3) {
+    animation-delay: 0.4s;
 }
 
-.service-card img {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 1rem;
+.card:nth-child(4), .benefit:nth-child(4), .service-card:nth-child(4) {
+    animation-delay: 0.55s;
 }
 
-.service-card h3 {
-    font-size: 1.5rem;
-    color: #028f8a;
-    margin-bottom: 1rem;
+/* MEDIA QUERIES PARA RESPONSIVIDAD */
+@media (max-width: 1200px) {
+    .card, .benefit, .benefits-for-professionals .benefit {
+        width: 45%;
+    }
+    
+    .service-card {
+        width: 30%;
+    }
 }
 
-/* SECCIÓN DE BENEFICIOS PARA PROFESIONALES */
-.benefits-for-professionals {
-    margin-top: 4rem;
-    padding: 3rem;
-    background: #f4f7fc;
-    border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 3rem;
+    }
+    
+    .header p {
+        font-size: 1.2rem;
+    }
+    
+    .card, .benefit, .benefits-for-professionals .benefit, .service-card {
+        width: 100%;
+    }
 }
 
-.benefits-for-professionals h2 {
-    font-size: 2.2rem;
-    color: #028f8a;
-    margin-bottom: 2rem;
-    font-weight: bold;
-}
-
-.benefits-for-professionals p {
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto 2rem;
-    text-align: center;
-}
-
-.benefits-for-professionals .benefits {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-}
-
-.benefits-for-professionals .benefit {
-    width: 30%;
-    margin-bottom: 2rem;
-}
-
-.benefits-for-professionals .benefit h3 {
-    font-size: 1.7rem;
-    color: #028f8a;
-    margin-bottom: 1rem;
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .nosotros-container {
+        padding: 2rem 1rem;
+    }
+    
+    .why-choose-us, .services, .benefits-for-professionals {
+        padding: 2.5rem 1.5rem;
+    }
 }
