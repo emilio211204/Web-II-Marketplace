@@ -3,12 +3,12 @@ import { FormularioProductoComponent } from "../../components/formulario-product
 import { TablaFormularioComponent } from "../../components/tabla-formulario/tabla-formulario.component";
 
 @Component({
-  selector: 'app-servicios',
+  selector: 'app-agregar',
   standalone: true,
   imports: [FormularioProductoComponent, TablaFormularioComponent],
-  templateUrl: './servicios.component.html',
-  styleUrl: './servicios.component.css'
+  templateUrl: './agregar.component.html',
+  styleUrl: './agregar.component.css'
 })
-export class ServiciosComponent {
+export class AgregarComponent {
 
 }

@@ -1,0 +1,89 @@
+/* Contenedor principal de la tabla */
+.table-container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+/* Encabezado de la tabla */
+thead {
+    background-color: #4CAF50;
+    /* Verde */
+    color: white;
+}
+
+thead th {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Filas de la tabla */
+tbody tr {
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+    /* Efecto de hover */
+}
+
+/* Celdas de la tabla */
+td {
+    padding: 10px 15px;
+    text-align: left;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Estilo para las imágenes dentro de la tabla */
+.service-image {
+    width: 50px;      /* Establece un tamaño adecuado */
+    height: 50px;     /* Establece un tamaño adecuado */
+    object-fit: cover; /* Asegura que la imagen se recorte bien */
+    border-radius: 50%; /* Si quieres las imágenes circulares */
+  }
+  
+
+/* Bordes y sombra para la tabla */
+table,
+th,
+td {
+    border: 1px solid #ddd;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Ajuste para las celdas de imagen */
+td img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Añadir un poco de espacio al final */
+table {
+    margin-bottom: 20px;
+}

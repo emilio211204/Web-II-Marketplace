@@ -1,0 +1,42 @@
+<div class="form-container">
+    <h2>Formulario Ingreso de Servicios</h2>
+    <form (ngSubmit)="guardarFormulario(formulario)" #formulario="ngForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nombre">Ingresar el Nombre: </label>
+          <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre" placeholder="Ingresar el Nombre" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Ingresar el Correo: </label>
+          <input type="email" id="email" name="email" [(ngModel)]="email" placeholder="Ingresar el Correo" required />
+        </div>
+      </div>
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label for="profesion">Ingresar la Profesion: </label>
+          <input type="text" id="profesion" name="profesion" [(ngModel)]="profesion" placeholder="Ingresar la Profesion" required />
+        </div>
+        <div class="form-group">
+          <label for="telefono">Ingresar el Telefono: </label>
+          <input type="tel" id="telefono" name="telefono" [(ngModel)]="telefono" placeholder="Ingresar el Telefono" required />
+        </div>
+      </div>
+  
+      <div class="form-row">
+        <div class="form-group">
+          <label for="direccion">Ingresar la Direccion: </label>
+          <input type="text" id="direccion" name="direccion" [(ngModel)]="direccion" placeholder="Ingresar la Direccion" required />
+        </div>
+        <div class="form-group">
+          <label for="imagen">Ingresar la url de la Imagen: </label>
+          <input type="url" id="imagen" name="imagen" [(ngModel)]="imagen" placeholder="Ingresar la url de la Imagen" required />
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <button type="submit" [disabled]="formulario.invalid">Enviar Datos</button>
+      </div>
+    </form>
+  </div>
+  

@@ -1,0 +1,22 @@
+{
+  "servicios": [
+    {
+      "id": "8b03",
+      "nombre": "Juan Ulcuango",
+      "email": "juanp@gmail.com",
+      "profesion": "Abogado",
+      "telefono": "0987451263",
+      "direccion": "Quito",
+      "imagen": "https://images.pexels.com/photos/4427630/pexels-photo-4427630.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "id": "690d",
+      "nombre": "Emilio Chacha",
+      "email": "joseulcuango32@gmail.com",
+      "profesion": "Pintor",
+      "telefono": "0962881908",
+      "direccion": "Latacunga",
+      "imagen": "https://images.pexels.com/photos/4427630/pexels-photo-4427630.jpeg?auto=compress&cs=tinysrgb&w=600"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+<div class="form-container">
+    <h2> Servicios</h2>
+    <form (ngSubmit)="editar(formulario)" #formulario="ngForm">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="nombre">Id: </label>
+                <input type="text" id="id" name="id" [(ngModel)]="id" />
+            </div>
+            <div class="form-group">
+                <label for="nombre">Nombre: </label>
+                <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre" />
+            </div>
+            <div class="form-group">
+                <label for="email">Correo: </label>
+                <input type="email" id="email" name="email" [(ngModel)]="email" />
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="profesion"> Profesion: </label>
+                <input type="text" id="profesion" name="profesion" [(ngModel)]="profesion" />
+            </div>
+            <div class="form-group">
+                <label for="telefono">Telefono: </label>
+                <input type="tel" id="telefono" name="telefono" [(ngModel)]="telefono" />
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="direccion">Ingresar la Direccion: </label>
+                <input type="text" id="direccion" name="direccion" [(ngModel)]="direccion" />
+            </div>
+            <div class="form-group">
+                <label for="imagen">Ingresar la url de la Imagen: </label>
+                <input type="url" id="imagen" name="imagen" [(ngModel)]="imagen" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" [disabled]="formulario.invalid">Enviar Datos</button>
+        </div>
+    </form>
+</div>
