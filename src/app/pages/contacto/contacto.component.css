@@ -11,13 +11,12 @@
 }
 
 .contact-container {
-  max-width: 650px;
+  max-width: 800px;
   margin: 60px auto;
-  margin-top: 120px;
-  padding: 45px 40px;
+  padding: 40px;
   text-align: center;
-  background: linear-gradient(to right, #03dac6, #ff0266);
-  border-radius: 30px;
+  background: linear-gradient(135deg, #03dac6, #ff0266);
+  border-radius: 8px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.1);
   transition: var(--transition-standard);
   color: var(--text-primary);
@@ -25,31 +24,43 @@
   backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
 }
 
-/* Efecto decorativo */
+/* Efecto decorativo con patrón de cuadrícula */
 .contact-container::before {
   content: '';
   position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-  transform: rotate(-5deg);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
   pointer-events: none;
   z-index: 0;
 }
 
 .contact-container:hover {
-  transform: translateY(-8px) scale(1.02);
+  transform: scale(1.02);
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+.header-section {
+  position: relative;
+  z-index: 1;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 20px;
 }
 
 h1 {
   color: var(--text-primary);
   margin-bottom: 25px;
-  font-size: 34px;
+  font-size: 32px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -60,18 +71,32 @@ h1 {
   z-index: 1;
 }
 
-/* Decoración para el título */
+/* Decoración para el título en forma de cuadrado */
 h1::after {
   content: '';
   position: absolute;
-  width: 60px;
+  width: 40px;
   height: 4px;
   background: white;
   bottom: -12px;
   left: 50%;
   transform: translateX(-50%);
-  border-radius: 2px;
+  border-radius: 0;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1::before {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: var(--accent-color);
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  border-radius: 0;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  z-index: -1;
 }
 
 p {
@@ -86,14 +111,18 @@ p {
 }
 
 .contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  align-items: center;
-  max-width: 600px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 700px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
+}
+
+/* Campos que ocupan todo el ancho */
+.form-group.full-width {
+  grid-column: span 2;
 }
 
 .form-group {
@@ -119,7 +148,7 @@ p {
   width: 100%;
   padding: 18px 20px;
   border: 2px solid rgba(255, 255, 255, 0.4);
-  border-radius: 14px;
+  border-radius: 8px;
   font-size: 16px;
   background: rgba(255, 255, 255, 0.12);
   color: var(--text-primary);
@@ -160,12 +189,19 @@ p {
   line-height: 1.6;
 }
 
+.button-container {
+  grid-column: span 2;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
 .contact-form button {
-  background: transparent; /* Fondo transparente */
-  color: var(--accent-color); /* Color de texto igual al color del fondo */
+  background: transparent;
+  color: var(--text-primary);
   padding: 16px 36px;
-  border: 2px solid var(--accent-color); /* Borde con el color de acento */
-  border-radius: 50px;
+  border: 2px solid var(--accent-color);
+  border-radius: 8px;
   cursor: pointer;
   font-size: 18px;
   font-weight: 600;
@@ -174,8 +210,8 @@ p {
   font-family: 'Poppins', sans-serif;
   position: relative;
   overflow: hidden;
-  margin-top: 10px;
   letter-spacing: 0.5px;
+  min-width: 200px;
 }
 
 /* Efecto de brillo al pasar el cursor */
@@ -195,8 +231,8 @@ p {
 }
 
 .contact-form button:hover {
-  background: var(--accent-color); /* Fondo del botón al pasar el cursor */
-  color: white; /* Cambia el color del texto cuando se pasa el cursor */
+  background: var(--accent-color);
+  color: white;
   transform: translateY(-5px);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
@@ -206,26 +242,51 @@ p {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Iconos para los campos */
+.form-group {
+  position: relative;
+}
+
+.form-group::before {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 50px;
+  left: 12px;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 2;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
+.form-group.icon-padding input,
+.form-group.icon-padding select {
+  padding-left: 40px;
+}
+
 /* Animaciones de entrada */
-@keyframes fadeInUp {
+@keyframes fadeInScale {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: scale(0.9);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: scale(1);
   }
 }
 
 .form-group {
-  animation: fadeInUp 0.6s ease backwards;
+  animation: fadeInScale 0.5s ease backwards;
 }
 
 .form-group:nth-child(1) { animation-delay: 0.1s; }
 .form-group:nth-child(2) { animation-delay: 0.2s; }
 .form-group:nth-child(3) { animation-delay: 0.3s; }
 .form-group:nth-child(4) { animation-delay: 0.4s; }
+.form-group:nth-child(5) { animation-delay: 0.5s; }
 
 /* Indicadores de validación */
 .contact-form input:valid,
@@ -234,13 +295,111 @@ p {
   border-left: 4px solid rgba(255, 255, 255, 0.8);
 }
 
+/* Estilos para checkbox personalizados */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  padding-left: 35px;
+  user-select: none;
+}
+
+.checkbox-group label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  transition: var(--transition-standard);
+}
+
+.checkbox-group input[type="checkbox"]:checked + label::before {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.checkbox-group input[type="checkbox"]:checked + label::after {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 3px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Barra de progreso estilizada */
+.progress-container {
+  width: 100%;
+  grid-column: span 2;
+  background: rgba(255, 255, 255, 0.1);
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 10px 0 20px;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background: var(--accent-color);
+  transition: width 0.4s ease;
+  border-radius: 4px;
+}
+
+/* Adornos decorativos cuadrados */
+.square-decoration {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.05);
+  transform: rotate(45deg);
+  z-index: 0;
+}
+
+.square-decoration.top-right {
+  top: -60px;
+  right: -60px;
+}
+
+.square-decoration.bottom-left {
+  bottom: -60px;
+  left: -60px;
+}
+
 /* Media query para pantallas más pequeñas */
 @media (max-width: 768px) {
   .contact-container {
     padding: 30px 25px;
     max-width: 90%;
     margin: 40px auto;
-    border-radius: 25px;
+  }
+
+  .contact-form {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-group.full-width,
+  .button-container {
+    grid-column: 1;
   }
 
   h1 {
@@ -248,19 +407,9 @@ p {
     margin-bottom: 20px;
   }
   
-  h1::after {
-    width: 40px;
-    height: 3px;
-    bottom: -8px;
-  }
-
   p {
     font-size: 15px;
     margin-bottom: 25px;
-  }
-
-  .contact-form {
-    gap: 18px;
   }
 
   .contact-form input,
@@ -268,12 +417,12 @@ p {
   .contact-form textarea {
     padding: 15px 18px;
     font-size: 15px;
-    border-radius: 12px;
   }
 
   .contact-form button {
     padding: 14px 28px;
     font-size: 16px;
+    min-width: 180px;
   }
 }
 
@@ -293,9 +442,4 @@ p {
     padding: 14px 16px;
     font-size: 14px;
   }
-  .form-submit-btn i {
-    margin-right: 8px; /* Espacio entre el icono y el texto */
-    font-size: 18px;
-}
-
 }
