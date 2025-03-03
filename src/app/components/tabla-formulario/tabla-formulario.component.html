@@ -1,4 +1,4 @@
-<h2>Lista de Servicios</h2>
+<h2>Lista de Servicios</h2> 
 <div class="table-container">
     <table>
         <thead>
@@ -10,8 +10,8 @@
                 <th>Teléfono</th>
                 <th>Dirección</th>
                 <th>Imagen</th>
-                <th>Accion de editar</th>
-                <th>Accion de eliminar</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
             </tr>
         </thead>
         <tbody>
@@ -25,7 +25,7 @@
                 <td>{{ servicio.direccion }}</td>
                 <td><img [src]="servicio.imagen" alt="Imagen de servicio" class="service-image" /></td>
                 <td><button [routerLink]="['/editar', servicio.id]">Editar</button></td>
-                <td><button (click)="eliminarServicio(servicio.id)" >Eliminar</button></td>
+                <td><button (click)="eliminarServicio(servicio.id)">Eliminar</button></td>
             </tr>
             }
         </tbody>

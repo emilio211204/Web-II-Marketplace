@@ -1,1 +1,18 @@
-
+<div class="card-container">
+    @for (servicio of servicios; track $index) {
+      <div class="card">
+        <div class="card-image" (click)="toggleDetails(servicio)">
+          <img [src]="servicio.imagen" alt="Imagen de {{ servicio.nombre }}" class="service-image" />
+          <div class="card-name">
+            <h4>{{ servicio.nombre }}</h4>
+          </div>
+        </div>
+        <div class="card-details" [class.visible]="servicio.showDetails">
+          <p><strong>Correo:</strong> <a href="mailto:{{ servicio.email }}">{{ servicio.email }}</a></p>
+          <p><strong>Profesión:</strong> {{ servicio.profesion }}</p>
+          <p><strong>Teléfono:</strong> <a href="tel:{{ servicio.telefono }}">{{ servicio.telefono }}</a></p>
+          <p><strong>Dirección:</strong> {{ servicio.direccion }}</p>
+        </div>
+      </div>
+    }
+  </div>
