@@ -1,89 +1,126 @@
-/* Contenedor principal de la tabla */
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Fondo oscuro para resaltar la tabla */
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Contenedor de la tabla */
 .table-container {
     width: 90%;
-    margin: 0 auto;
+    max-width: 1200px;
+    margin: 20px auto;
+    overflow-x: auto;
+    background: rgba(255, 255, 255, 0.1);
     padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Títulos */
+h2 {
+    color: #ff0266;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 /* Estilo de la tabla */
 table {
     width: 100%;
     border-collapse: collapse;
-    background-color: white;
+    background:white;
     border-radius: 8px;
     overflow: hidden;
-    margin-top: 20px;
 }
 
-/* Encabezado de la tabla */
+/* Encabezados */
 thead {
-    background-color: #4CAF50;
-    /* Verde */
-    color: white;
+    background: #03dac6;
+    color: #121212;
 }
 
-thead th {
-    padding: 12px 15px;
-    text-align: left;
-    font-size: 16px;
+th {
+    padding: 12px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+/* Celdas */
+td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Filas alternas */
+tbody tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Imagen */
+.service-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 2px solid #ff0266;
+}
+
+/* Botones */
+button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Botón de Editar */
+button[routerLink] {
+    background: #03dac6;
+    color: #121212;
     font-weight: bold;
 }
 
-/* Filas de la tabla */
-tbody tr {
-    border-bottom: 1px solid #ddd;
-    transition: background-color 0.3s ease;
+button[routerLink]:hover {
+    background: #02c5a3;
 }
 
-tbody tr:hover {
-    background-color: #f1f1f1;
-    /* Efecto de hover */
+/* Botón de Eliminar */
+button:hover {
+    transform: scale(1.05);
 }
 
-/* Celdas de la tabla */
-td {
-    padding: 10px 15px;
-    text-align: left;
-    font-size: 14px;
-    color: #555;
+button[click] {
+    background: #ff0266;
+    color: white;
+    font-weight: bold;
 }
 
-/* Estilo para las imágenes dentro de la tabla */
-.service-image {
-    width: 50px;      /* Establece un tamaño adecuado */
-    height: 50px;     /* Establece un tamaño adecuado */
-    object-fit: cover; /* Asegura que la imagen se recorte bien */
-    border-radius: 50%; /* Si quieres las imágenes circulares */
-  }
-  
-
-/* Bordes y sombra para la tabla */
-table,
-th,
-td {
-    border: 1px solid #ddd;
+button[click]:hover {
+    background: #d5004f;
 }
 
-table th,
-table td {
-    padding: 12px 15px;
-    text-align: left;
-}
+/* Responsividad */
+@media (max-width: 768px) {
+    th, td {
+        font-size: 12px;
+        padding: 8px;
+    }
 
-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
+    .service-image {
+        width: 40px;
+        height: 40px;
+    }
 
-/* Ajuste para las celdas de imagen */
-td img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* Añadir un poco de espacio al final */
-table {
-    margin-bottom: 20px;
+    button {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
 }
