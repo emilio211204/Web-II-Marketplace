@@ -1,44 +1,24 @@
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "ROBOTO", sans-serif;
-  background-color: #ebecf1;
-  color: #faebd7;
-  /* El padding-top asegura que el contenido no se superponga con el nav */
-  padding-top: 60px; /* Ajusté el valor para que el contenido no quede cubierto por el nav */
-}
-
-/* Navbar */
+/* Estilos generales */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 50px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  position: fixed; /* Hace que el nav se quede fijo al hacer scroll */
+  position: fixed;
   width: 100%;
   top: 0;
   z-index: 100;
-  background-color: #ebecf1; /* Fondo del nav */
+  background-color: #ebecf1;
 }
 
-nav .logo {
-  font-size: 26px;
-  font-weight: bold;
-  color: #03dac6;
-  text-decoration: none;
-  transition: color 0.3s;
+.logo-icon {
+  width: 200px;
+  height: auto;
+  margin-right: 10px;
 }
 
-nav .logo:hover {
-  color: #ff0266;
-}
-
+/* Ocultar menú en móviles */
 nav ul {
   list-style: none;
   display: flex;
@@ -52,6 +32,7 @@ nav ul li a {
   padding: 12px 18px;
   border-radius: 8px;
   transition: background 0.3s, color 0.3s;
+  font-size: 18px;
 }
 
 nav ul li a:hover {
@@ -59,55 +40,40 @@ nav ul li a:hover {
   color: #1e1f26;
 }
 
-/* Botones */
-.btn {
+/* Botón hamburguesa */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle div {
+  width: 30px;
+  height: 3px;
   background-color: #03dac6;
-  color: #1e1f26;
-  padding: 12px 18px;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: background 0.3s;
+  margin: 5px;
 }
 
-.btn:hover {
-  background-color: #028f8a;
-  color: #fff;
-}
-
-.login-button {
-  background-color: #ff0266;
-  color: #fff;
-  padding: 12px 18px;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: background 0.3s;
-}
-
-.login-button:hover {
-  background-color: #cc4627;
-}
-
-/* Animaciones */
-@-webkit-keyframes loading {
-  to {
-      text-shadow: 20px 0 70px #ff0266;
-      color: #ff0266;
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
   }
-}
 
-.loader span {
-  color: #faebd7;
-  text-shadow: 0 0 0 #faebd7;
-  -webkit-animation: loading 1s ease-in-out infinite alternate;
-}
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #ebecf1;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+  }
 
-.loader span:nth-child(n) {
-  -webkit-animation-delay: calc(0.1s * (n - 1));
-}
-
-.logo-icon {
-  width: 200px; 
-  height: auto;
-  margin-right: 10px;
-  vertical-align: middle; 
+  /* Mostrar menú cuando se activa */
+  nav ul.active {
+    display: flex;
+  }
 }

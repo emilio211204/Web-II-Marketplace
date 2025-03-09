@@ -9,5 +9,13 @@ import { RouterModule } from '@angular/router';
   styleUrl: './nav.component.css'
 })
 export class NavComponent {
+  menuAbierto: boolean = false;
+
+  toggleMenu() {
+    this.menuAbierto = !this.menuAbierto;
+  }
+  cerrarMenu() {
+    this.menuAbierto = false;
+  }
 
 }
