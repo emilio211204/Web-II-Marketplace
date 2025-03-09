@@ -1,13 +1,22 @@
 <nav>
-    <a th:href="" class="logo">
-        <img src="assets/imagenes/workana.jpg" alt="Logo" class="logo-icon">
-        
+    <a routerLink="/" class="logo">
+      <img src="assets/imagenes/workana.jpg" alt="Logo" class="logo-icon">
     </a>
-    <ul>
-        <li><a routerLink="home" class="fa-solid">Inicio</a></li>
-        <li><a routerLink="nosotros" class="fa-solid">Nosotros</a></li>
-        <li><a routerLink="servicios" class="fa-solid">Servicios</a></li>
-        <li><a routerLink="contacto" class="fa-solid">Contacto</a></li>
-        <li><a routerLink="formulario" class="fa-solid">Formulario</a></li>
+  
+    <!-- Botón menú hamburguesa -->
+    <div class="menu-toggle" (click)="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  
+    <!-- Menú de navegación -->
+    <ul [class.active]="menuAbierto">
+      <li><a routerLink="home" (click)="cerrarMenu()">Inicio</a></li>
+      <li><a routerLink="nosotros" (click)="cerrarMenu()">Nosotros</a></li>
+      <li><a routerLink="servicios" (click)="cerrarMenu()">Servicios</a></li>
+      <li><a routerLink="contacto" (click)="cerrarMenu()">Contacto</a></li>
+      <li><a routerLink="formulario" (click)="cerrarMenu()">Formulario</a></li>
     </ul>
-</nav>
+  </nav>
+  

@@ -7,8 +7,10 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f4f7fc; /* Manteniendo color original */
-    color: #333; /* Manteniendo color original */
+    background-color: #f4f7fc;
+    /* Manteniendo color original */
+    color: #333;
+    /* Manteniendo color original */
     line-height: 1.7;
 }
 
@@ -16,8 +18,11 @@ body {
 .nosotros-container {
     max-width: 1280px;
     margin: 0 auto;
+    margin-top: 120px;
     padding: 4rem 2rem;
     text-align: center;
+    animation: fadeIn 2s ease-out;
+
 }
 
 /* HEADER */
@@ -30,8 +35,13 @@ body {
     box-shadow: 0 10px 30px rgba(6, 190, 182, 0.5), 0 10px 30px rgba(72, 177, 191, 0.5);
     position: relative;
     overflow: hidden;
+    border: 2px solid #028f8a;
+    padding: 10px;
+    transition: all 0.3s ease;
 }
-
+.header:hover {
+    border-width: 5px;
+}
 .header::before {
     content: '';
     position: absolute;
@@ -39,11 +49,13 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* Overlay oscuro para mejor legibilidad */
+    background: rgba(0, 0, 0, 0.4);
+    /* Overlay oscuro para mejor legibilidad */
     z-index: 1;
 }
 
-.header h1, .header p {
+.header h1,
+.header p {
     position: relative;
     z-index: 2;
 }
@@ -53,7 +65,7 @@ body {
     font-weight: 800;
     margin-bottom: 1.5rem;
     color: black;
-    text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.6); 
+    text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.6);
     letter-spacing: 0.5px;
 }
 
@@ -62,7 +74,8 @@ body {
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.6;
-    color: rgba(255, 255, 255, 0.9); /* Manteniendo color similar al original */
+    color: rgba(255, 255, 255, 0.9);
+    /* Manteniendo color similar al original */
 }
 
 /* SECCIÓN DE TARJETAS */
@@ -76,6 +89,12 @@ body {
     padding: 4rem 2rem;
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    border: 2px solid #028f8a;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+.content:hover {
+    border-width: 5px;
 }
 
 .card {
@@ -86,8 +105,11 @@ body {
     width: 30%;
     transition: all 0.3s ease;
     text-align: center;
-    border-bottom: 5px solid #028f8a; /* Manteniendo color original */
+    border-bottom: 5px solid #028f8a;
+    /* Manteniendo color original */
     position: relative;
+    transition: background-color 0.3s ease;
+
 }
 
 .card::before {
@@ -97,17 +119,20 @@ body {
     left: 0;
     width: 100%;
     height: 5px;
-    background: #028f8a; /* Manteniendo color original */
+    background: #028f8a;
+    /* Manteniendo color original */
     border-radius: 15px 15px 0 0;
 }
 
 .card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    background-color: #e0dedf;
 }
 
 .card h2 {
-    color: #028f8a; /* Manteniendo color original */
+    color: #028f8a;
+    /* Manteniendo color original */
     margin-bottom: 1.5rem;
     font-size: 2rem;
     position: relative;
@@ -123,7 +148,8 @@ body {
     transform: translateX(-50%);
     width: 50px;
     height: 3px;
-    background: #028f8a; /* Manteniendo color original */
+    background: #028f8a;
+    /* Manteniendo color original */
     border-radius: 2px;
 }
 
@@ -148,16 +174,54 @@ body {
     transform: translateX(3px);
 }
 
+/* Estilos de Fade-In */
+.card,
+.benefit {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.card.visible,
+.benefit.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animación de Fade-in para la clase visible */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
 /* SECCIÓN "¿POR QUÉ ELEGIRNOS?" */
 .why-choose-us {
     margin-top: 5rem;
     padding: 3.5rem 3rem;
-    background: linear-gradient(to right, #03dac6, #ff0266); /* Manteniendo colores originales */
+    background: linear-gradient(to right, #03dac6, #ff0266);
+    /* Manteniendo colores originales */
     border-radius: 20px;
     color: white;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     text-align: center;
     position: relative;
+    border: 2px solid #028f8a;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.why-choose-us:hover {
+    border-width: 5px;
 }
 
 .why-choose-us h2 {
@@ -196,14 +260,17 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     width: 30%;
     text-align: center;
-    color: #333; /* Manteniendo color original */
+    color: #333;
+    /* Manteniendo color original */
     transition: all 0.3s ease;
     margin-bottom: 2rem;
 }
 
 .benefit:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    background-color: #e0dedf;
+
 }
 
 .benefit img {
@@ -219,7 +286,8 @@ body {
 
 .benefit h3 {
     font-size: 1.7rem;
-    color: #028f8a; /* Manteniendo color original */
+    color: #028f8a;
+    /* Manteniendo color original */
     margin-bottom: 1rem;
     padding-bottom: 0.8rem;
     position: relative;
@@ -233,9 +301,11 @@ body {
     transform: translateX(-50%);
     width: 40px;
     height: 2px;
-    background: #028f8a; /* Manteniendo color original */
+    background: #028f8a;
+    /* Manteniendo color original */
     border-radius: 2px;
 }
+
 .benefits-for-professionals {
     margin-top: 5rem;
     padding: 3.5rem 3rem;
@@ -243,7 +313,16 @@ body {
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
     text-align: center;
+    border: 2px solid #028f8a;
+    padding: 10px;
+    transition: all 0.3s ease;
 }
+
+.benefits-for-professionals:hover {
+    border: 2px solid #03dac6;
+    border-width: 5px;
+}
+
 
 .benefits-for-professionals h2 {
     font-size: 2.4rem;
@@ -269,11 +348,22 @@ body {
     color: #333;
     transition: all 0.3s ease;
     margin-bottom: 2rem;
+    border: 2px solid #03dac6;
+}
+
+.benefit:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    background-color: #e0dedf;
+    border-width: 5px;
 }
 
 /* MEDIA QUERIES */
 @media (max-width: 1200px) {
-    .card, .benefit, .service-card {
+
+    .card,
+    .benefit,
+    .service-card {
         width: 45%;
     }
 }
@@ -282,12 +372,14 @@ body {
     .header h1 {
         font-size: 3rem;
     }
-    
+
     .header p {
         font-size: 1.2rem;
     }
-    
-    .card, .benefit, .service-card {
+
+    .card,
+    .benefit,
+    .service-card {
         width: 100%;
     }
 }
@@ -296,55 +388,70 @@ body {
     .header h1 {
         font-size: 2.5rem;
     }
-    
+
     .nosotros-container {
         padding: 2rem 1rem;
     }
-    
-    .services, .benefits-for-professionals {
+
+    .services,
+    .benefits-for-professionals {
         padding: 2.5rem 1.5rem;
     }
 }
 
 /* EFECTOS VISUALES ADICIONALES */
-.card, .benefit, .service-card {
+.card,
+.benefit,
+.service-card {
     opacity: 0;
     animation: fadeIn 0.8s ease forwards;
 }
 
 @keyframes fadeIn {
-    from { 
-        opacity: 0; 
-        transform: translateY(20px); 
+    from {
+        opacity: 0;
+        transform: translateY(20px);
     }
-    to { 
-        opacity: 1; 
-        transform: translateY(0); 
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-.card:nth-child(1), .benefit:nth-child(1), .service-card:nth-child(1) {
+.card:nth-child(1),
+.benefit:nth-child(1),
+.service-card:nth-child(1) {
     animation-delay: 0.1s;
 }
 
-.card:nth-child(2), .benefit:nth-child(2), .service-card:nth-child(2) {
+.card:nth-child(2),
+.benefit:nth-child(2),
+.service-card:nth-child(2) {
     animation-delay: 0.25s;
 }
 
-.card:nth-child(3), .benefit:nth-child(3), .service-card:nth-child(3) {
+.card:nth-child(3),
+.benefit:nth-child(3),
+.service-card:nth-child(3) {
     animation-delay: 0.4s;
 }
 
-.card:nth-child(4), .benefit:nth-child(4), .service-card:nth-child(4) {
+.card:nth-child(4),
+.benefit:nth-child(4),
+.service-card:nth-child(4) {
     animation-delay: 0.55s;
 }
 
 /* MEDIA QUERIES PARA RESPONSIVIDAD */
 @media (max-width: 1200px) {
-    .card, .benefit, .benefits-for-professionals .benefit {
+
+    .card,
+    .benefit,
+    .benefits-for-professionals .benefit {
         width: 45%;
     }
-    
+
     .service-card {
         width: 30%;
     }
@@ -354,12 +461,15 @@ body {
     .header h1 {
         font-size: 3rem;
     }
-    
+
     .header p {
         font-size: 1.2rem;
     }
-    
-    .card, .benefit, .benefits-for-professionals .benefit, .service-card {
+
+    .card,
+    .benefit,
+    .benefits-for-professionals .benefit,
+    .service-card {
         width: 100%;
     }
 }
@@ -368,12 +478,14 @@ body {
     .header h1 {
         font-size: 2.5rem;
     }
-    
+
     .nosotros-container {
         padding: 2rem 1rem;
     }
-    
-    .why-choose-us, .services, .benefits-for-professionals {
+
+    .why-choose-us,
+    .services,
+    .benefits-for-professionals {
         padding: 2.5rem 1.5rem;
     }
 }

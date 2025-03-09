@@ -1,18 +1,37 @@
+<div class="services-introduction">
+  <h2>Servicios que ofrecemos en Workana</h2>
+  <p style="color: #ffffff; font-size: 1.1rem; line-height: 1.6; margin-bottom: 10px;">
+      En Workana, podrás encontrar una amplia variedad de servicios profesionales de los mejores 
+      proveedores en tu área. Desde plomeros y electricistas hasta diseñadores y desarrolladores, cada proveedor 
+      está aquí para ofrecerte soluciones personalizadas y de calidad.
+  </p>
+  <p style="color: #ffffff; font-size: 1.1rem; line-height: 1.6; margin-bottom: 10px;">
+      Nos enorgullece conectar a los mejores profesionales con los clientes que necesitan ayuda. Ya sea para 
+      reparaciones en casa, proyectos comerciales o necesidades específicas, estamos aquí para ayudarte a encontrar 
+      el servicio adecuado.
+  </p>
+  <p style="color: #ffffff; font-size: 1.1rem; line-height: 1.6;">
+      Explora nuestra plataforma, selecciona el servicio que necesitas y contacta directamente a los expertos. 
+      ¡Estamos seguros de que encontrarás exactamente lo que buscas!
+      <br><br><br><br>
+  </p>
+</div>
+
 <div class="card-container">
-    @for (servicio of servicios; track $index) {
-      <div class="card">
-        <div class="card-image" (click)="toggleDetails(servicio)">
-          <img [src]="servicio.imagen" alt="Imagen de {{ servicio.nombre }}" class="service-image" />
-          <div class="card-name">
-            <h4>{{ servicio.nombre }}</h4>
-          </div>
-        </div>
-        <div class="card-details" [class.visible]="servicio.showDetails">
-          <p><strong>Correo:</strong> <a href="mailto:{{ servicio.email }}">{{ servicio.email }}</a></p>
-          <p><strong>Profesión:</strong> {{ servicio.profesion }}</p>
-          <p><strong>Teléfono:</strong> <a href="tel:{{ servicio.telefono }}">{{ servicio.telefono }}</a></p>
-          <p><strong>Dirección:</strong> {{ servicio.direccion }}</p>
-        </div>
+  @for (servicio of servicios; track $index) {
+  <div class="card">
+    <div class="card-image" (click)="toggleDetails(servicio)">
+      <img [src]="servicio.imagen" alt="Imagen de {{ servicio.nombre }}" class="service-image" />
+      <div class="card-name">
+        <h4>{{ servicio.nombre }}</h4>
       </div>
-    }
+    </div>
+    <div class="card-details" [class.visible]="servicio.showDetails">
+      <p><strong>Correo:</strong> <a href="mailto:{{ servicio.email }}">{{ servicio.email }}</a></p>
+      <p><strong>Profesión:</strong> {{ servicio.profesion }}</p>
+      <p><strong>Teléfono:</strong> <a href="tel:{{ servicio.telefono }}">{{ servicio.telefono }}</a></p>
+      <p><strong>Dirección:</strong> {{ servicio.direccion }}</p>
+    </div>
   </div>
+  }
+</div>
