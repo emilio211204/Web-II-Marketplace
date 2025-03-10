@@ -1,166 +1,290 @@
-/* Hero */
-.hero {
-  text-align: center;
-  font-family: 'Poppins', sans-serif;
-  padding: 50px 20px;
-  margin-top: 100px;
-  background: linear-gradient(to right, #03dac6, #ff0266);
-  color: rgb(255, 255, 255);
-  font-family: 'Lobster', cursive;
+/* Estilos generales */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #1F2937;
 }
 
-.hero .highlight {
-  font-weight: bold;
-  color: rgb(36, 36, 27);
+/* Estilos del banner */
+.banner-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.home-banner {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 24px;
+  padding-bottom: 56px;
+  color: #ffffff;
+  background: linear-gradient(to right, rgba(3, 218, 198, 0.7), rgba(255, 2, 102, 0.7));
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  color: #FFFFFF;
+}
+
+.logo {
+  margin-bottom: 16px;
+  max-width: 250px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .description {
-  font-size: 18px;
-  margin-top: 10px;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
-/* Sección profesionales */
-.profesionales-titulo {
+/* Estilos para botones */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.subscription-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 20px;
+  font-size: 1rem;
+  color: #FFFFFF;
+  border-radius: 8px;
+  background-color: #ff0266;
   text-align: center;
-  margin: 40px 0;
-  font-family: 'Poppins', sans-serif;
-  background-color: #03dac6;
-  padding: 30px 0;
-  color: white;
-  border-radius: 8px 8px 0 0;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  font-family: 'Lobster', cursive;
+  text-decoration: none;
+  transition: background-color 0.3s;
 }
 
-.container-home {
+.subscription-btn:hover {
+  background-color: #d30055;
+}
+
+/* Estilos para servicios */
+.service-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  padding: 2rem;
+  background: linear-gradient(to right, #03dac6, #ff0266);
+}
+
+.service-card {
+  background: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-image {
   width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.service-content {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.service-title {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.service-description {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.service-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(to right, #03dac6, #ff0266);
+  color: white;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  transition: opacity 0.3s;
+}
+
+.service-link:hover {
+  opacity: 0.9;
+}
+
+.service-link svg {
+  margin-left: 0.5rem;
+}
+
+/* Sección de información */
+.info-section {
+  padding: 4rem 2rem;
+  position: relative;
+  background: linear-gradient(to right, #03dac6, #ff0266);
+  color: white;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.info-content {
+  text-align: center;
+  max-width: 800px;
+}
+
+.info-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.info-description {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.highlight {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+.highlight span {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+}
+
+/* Carousel de servicios */
+.services-section {
+  padding: 4rem 2rem;
+  background-color: white;
+}
+
+.services-title {
+  text-align: center;
+  font-size: 2.5rem;
+  background: linear-gradient(to right, #03dac6, #ff0266);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 3rem;
+}
+
+.services-grid {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
-  background-color: #03dac6;
-  border-radius: 0 0 8px 8px;
+  gap: 2rem;
 }
 
-.container-home li {
-  flex: 1 1 250px;
-  max-width: 300px;
-  border-radius: 10px;
-  cursor: pointer;
-  border: 1px solid #ddd;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s;
-}
-
-.container-home li:hover {
-  transform: scale(1.1);
-}
-
-.container-home li img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-main {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  padding: 20px;
-}
-
-.home-titulo {
+.service-icon-card {
+  width: 200px;
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 2rem 1rem;
   text-align: center;
-  font-size: 20px;
-  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 3px solid transparent;
+  background-image: linear-gradient(white, white), 
+                    linear-gradient(to right, #03dac6, #ff0266);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.imag-home img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 20px;
-  transition: transform 0.3s;
+.service-icon-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
-.imag-home img:hover {
-  transform: scale(1.1);
+.service-icon {
+  font-size: 3rem;
+  background: linear-gradient(to right, #03dac6, #ff0266);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
 }
 
-.titulo-servicios {
-  font-size: 2.4rem;
-  font-weight: 700;
-  text-align: center;
-  margin: 3rem auto 2rem;
-  max-width: 900px;
+.service-icon-title {
+  font-size: 1.2rem;
+  color: #333;
 }
 
-.titulo-servicios::after {
-  content: '';
-  display: block;
-  width: 120px;
-  height: 4px;
-  margin: 0.5rem auto;
-  background: linear-gradient(to right, #03dac6, #ff0266, #03dac6);
-  border-radius: 2px;
-}
-
-/* Estilos responsivos para computadoras y laptops */
-@media (min-width: 1024px) {
-  main {
-    grid-template-columns: 1fr 1fr;
-    padding: 50px;
-  }
-  .container-home {
-    justify-content: space-around;
-  }
-  .hero {
-    padding: 60px 40px;
-  }
-}
-
-/* Estilos responsivos para tablets y dispositivos medianos */
+/* Responsive */
 @media (max-width: 1024px) {
-  main {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  .container-home {
-    flex-direction: column;
-    align-items: center;
+  .service-container {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* Estilos responsivos para móviles */
 @media (max-width: 768px) {
-  .titulo-servicios {
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .service-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .highlight {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .title {
     font-size: 2rem;
   }
-  .container-home {
-    flex-direction: column;
-    align-items: center;
+  
+  .description {
+    font-size: 1rem;
   }
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  
+  .service-container {
+    grid-template-columns: 1fr;
   }
-}
-
-@media (max-width: 480px) {
-  .titulo-servicios {
-    font-size: 1.6rem;
-  }
-  .titulo-servicios::after {
-    width: 80px;
-  }
-  .hero {
-    padding: 30px 10px;
-    margin-top: 50px;
-  }
-  main {
-    padding: 10px;
-  }
+  
 }

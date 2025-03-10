@@ -1,228 +1,208 @@
-/* Importar fuentes de Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;600;700&family=Lora:wght@400;700&display=swap');
-
-/* Variables para mayor consistencia */
 :root {
-  --primary-gradient: linear-gradient(to right, #03dac6, #ff0266);
-  --text-primary: white;
-  --text-secondary: rgba(255, 255, 255, 0.8);
-  --accent-color: #ff0266;
-  --transition-standard: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --primary: #03dac6;
+  --secondary: #ff0266;
+  --accent: #e74c3c;
+  --light: #ecf0f1;
+  --dark: #2c3e50;
+  --success: #2ecc71;
+  --shadow: rgba(0, 0, 0, 0.1);
 }
 
-
-.form-container {
-  max-width: 650px;
-  background-color: #03dac6;
-  margin: 60px auto;
-  margin-top: 120px; 
-  padding: 45px 40px;
-  text-align: center;
-  background: linear-gradient(to right, #03dac6, #ff0266);
-  border-radius: 30px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.1);
-  transition: var(--transition-standard);
-  color: var(--text-primary);
-  font-family: 'Roboto', sans-serif;
-  backdrop-filter: blur(10px);
-  position: relative;
-  overflow: hidden;
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #03dac6, #ff0266, #03dac6);
+  margin: 0;
+  padding: 0;
+  color: #333;
+  min-height: 100vh;
 }
 
-/* Efecto decorativo */
-.form-container::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
-  transform: rotate(-5deg);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.form-container:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.15);
-}
-
-.form-title {
-  color: var(--text-primary);
-  margin-bottom: 25px;
-  font-size: 34px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
-  font-family: 'Poppins', sans-serif;
-  position: relative;
-  display: inline-block;
-  z-index: 1;
-}
-
-.form-title::after {
-  content: '';
-  position: absolute;
-  width: 60px;
-  height: 4px;
+.contract-container {
+  width: 90%;
+  max-width: 800px;
+  margin: 140px auto 0 auto;
   background: white;
-  bottom: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 2px;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  animation: slideUp 0.6s ease-out;
 }
 
-.form-description {
-  font-size: 17px;
-  line-height: 1.6;
-  color: var(--text-secondary);
-  margin-bottom: 35px;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
+.contract-header {
+  background: linear-gradient(to right, #03dac6, #ff0266, #03dac6);
+  color: white;
+  padding: 20px 30px;
   position: relative;
-  z-index: 1;
 }
 
-.form {
+h2 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 0;
+}
+
+.visual-section {
+  position: relative;
+  padding: 20px;
+}
+
+.service-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px var(--shadow);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+}
+
+.service-image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.invoice-badge {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: var(--secondary);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(255, 2, 102, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 2;
+}
+
+.invoice-badge svg {
+  width: 16px;
+  height: 16px;
+}
+
+.form-section {
+  padding: 20px 30px;
+}
+
+form {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  align-items: center;
-  max-width: 600px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
+  gap: 16px;
 }
 
 .form-group {
-  width: 100%;
-  text-align: left;
-  position: relative;
-  animation: fadeInUp 0.6s ease backwards;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
-.form-group:nth-child(1) { animation-delay: 0.1s; }
-.form-group:nth-child(2) { animation-delay: 0.2s; }
-.form-group:nth-child(3) { animation-delay: 0.3s; }
-.form-group:nth-child(4) { animation-delay: 0.4s; }
-
-.form-label {
-  font-weight: 500;
-  color: var(--text-primary);
-  font-size: 16px;
-  display: block;
-  margin-bottom: 8px;
-  font-family: 'Poppins', sans-serif;
-  transition: var(--transition-standard);
-  transform-origin: left;
-}
-
-.form-input,
-.form-select,
-.form-textarea {
-  width: 100%;
-  padding: 18px 20px;
-  border: 2px solid rgba(255, 255, 255, 0.4);
-  border-radius: 14px;
-  font-size: 16px;
-  background: rgba(255, 255, 255, 0.12);
-  color: var(--text-primary);
-  transition: var(--transition-standard);
-  font-family: 'Roboto', sans-serif;
-  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.08);
-}
-
-.form-input::placeholder,
-.form-textarea::placeholder {
-  color: rgba(255, 255, 255, 0.6);
-  font-style: italic;
-  font-weight: 300;
-}
-
-.form-input:focus,
-.form-select:focus,
-.form-textarea:focus {
-  border-color: #ff0266;
-  outline: none;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.25), inset 0 2px 8px rgba(0, 0, 0, 0.06);
-  background: rgba(255, 255, 255, 0.18);
-  transform: translateY(-2px);
-}
-
-.form-input:focus + .form-label,
-.form-select:focus + .form-label,
-.form-textarea:focus + .form-label {
-  transform: translateY(-2px);
-  color: white;
-}
-
-.form-textarea {
-  resize: none;
-  height: 170px;
-  padding-top: 18px;
-  line-height: 1.6;
-}
-
-.form-input:valid,
-.form-select:valid,
-.form-textarea:valid {
-  border-left: 4px solid rgba(255, 255, 255, 0.8);
-}
-
-.form-submit-btn {
-  background: transparent;
-  color: var(--accent-color);
-  padding: 16px 36px;
-  border: 2px solid var(--accent-color);
-  border-radius: 50px;
-  cursor: pointer;
-  font-size: 18px;
+label {
   font-weight: 600;
-  transition: var(--transition-standard);
-  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: var(--dark);
+  display: block;
+}
+
+input, select, textarea {
+  padding: 12px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 15px;
+  background-color: var(--light);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(3, 218, 198, 0.2);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.price-group {
   position: relative;
-  overflow: hidden;
-  margin-top: 10px;
-  letter-spacing: 0.5px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Efecto de brillo al pasar el cursor */
-.form-submit-btn::before {
-  content: '';
+.price-group input {
+  padding-left: 30px;
+}
+
+.price-group::before {
+  content: "$";
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-  transition: 0.6s;
+  bottom: 12px;
+  left: 12px;
+  font-weight: bold;
+  color: var(--dark);
 }
 
-.form-submit-btn:hover::before {
-  left: 100%;
+.date-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
 
-.form-submit-btn:hover {
-  background: var(--accent-color);
+.terms-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.terms-group input {
+  margin-top: 3px;
+  width: auto;
+}
+
+.terms-group label {
+  font-weight: normal;
+  font-size: 14px;
+  color: #555;
+}
+
+.execute-btn {
+  background: var(--secondary);
   color: white;
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  border: none;
+  padding: 14px;
+  margin-top: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
 }
 
-.form-submit-btn:active {
-  transform: translateY(0);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+.execute-btn:hover {
+  background: #e6005a;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 2, 102, 0.3);
 }
 
-/* Animaciones */
-@keyframes fadeInUp {
+@keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -230,92 +210,18 @@
   }
 }
 
-/* Media queries para responsive */
 @media (max-width: 768px) {
-  .form-container {
-    padding: 30px 25px;
-    max-width: 90%;
-    margin: 40px auto;
-    border-radius: 25px;
-  }
-
-  .form-title {
-    font-size: 28px;
-    margin-bottom: 20px;
+  .content-wrapper {
+    grid-template-columns: 1fr;
   }
   
-  .form-title::after {
-    width: 40px;
-    height: 3px;
-    bottom: -8px;
-  }
-
-  .form-description {
-    font-size: 15px;
-    margin-bottom: 25px;
-  }
-
-  .form {
-    gap: 18px;
-  }
-
-  .form-input,
-  .form-select,
-  .form-textarea {
-    padding: 15px 18px;
-    font-size: 15px;
-    border-radius: 12px;
-  }
-
-  .form-submit-btn {
-    padding: 14px 28px;
-    font-size: 16px;
-  }
-}
-
-/* Media query para pantallas muy pequeñas */
-@media (max-width: 480px) {
-  .form-container {
-    padding: 25px 20px;
-  }
-
-  .form-title {
-    font-size: 24px;
-  }
-
-  .form-input,
-  .form-select,
-  .form-textarea {
-    padding: 14px 16px;
-    font-size: 14px;
-  }
-  .form-image {
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto 25px;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    display: block;
-    position: relative;
-    z-index: 1;
+  .contract-container {
+    width: 95%;
+    margin: 20px auto;
   }
   
-  /* Para pantallas pequeñas, reducir el margen inferior */
-  @media (max-width: 768px) {
-    .form-image {
-      margin-bottom: 20px;
-    }
+  .invoice-badge {
+    top: 20px;
+    right: 20px;
   }
-  .form-icon {
-    font-size: 28px;
-    margin-right: 10px;
-    color: white;
-    vertical-align: middle;
-}
-.form-submit-btn i {
-    margin-right: 8px; /* Espacio entre el icono y el texto */
-    font-size: 18px;
-}
-
-
 }

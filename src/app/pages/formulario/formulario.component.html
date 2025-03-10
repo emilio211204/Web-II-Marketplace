@@ -1,51 +1,84 @@
-<div class="form-container">
-    <h2 class="form-title">
-        <i class="fas fa-envelope form-icon"></i> Únete a Workana
-    </h2>
-
-    <img src="https://www.vistazo.com/binrepository/768x512/0c0/768d432/none/12727/YDTA/job-interview-in-company-office-2023_1982396_20250127101547.jpg"
-        alt="Marketplace de profesionales" class="form-image">
-
-    <p class="form-description">
-        Conéctate con clientes que buscan profesionales como tú. Expande tu alcance y aumenta tus oportunidades
-        laborales.
-    </p>
-
-    <form class="form">
-        <div class="form-group">
-            <label for="nombre" class="form-label"><i class="fa-solid fa-user"></i> Nombre Completo</label>
-            <input type="text" id="nombre" class="form-input" name="nombre" placeholder="Ingresa tu nombre">
+<div class="contract-container">
+    <div class="contract-header">
+      <h2>Contrato de Servicios</h2>
+    </div>
+    
+    <div class="content-wrapper">
+      <div class="visual-section">
+        <img src="https://ecuador.unir.net/wp-content/uploads/sites/8/2024/12/Tipos-de-contratos-de-trabajo-Todo-lo-que-debes-saber2.jpg" alt="Servicios" class="service-image" />
+        <div class="invoice-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 16V8a2 2 0 0 0-2-2h-6.5l-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2z"></path>
+          </svg>
+          <span id="invoiceDisplay">FAC-001</span>
         </div>
-
-        <div class="form-group">
-            <label for="email" class="form-label"><i class="fa-solid fa-envelope"></i> Correo Electrónico</label>
-            <input type="email" id="email" class="form-input" name="email" placeholder="Ingresa tu correo">
-        </div>
-
-        <div class="form-group">
-            <label for="profesion" class="form-label"><i class="fa-solid fa-briefcase"></i> Profesión</label>
-            <select id="profesion" class="form-select" name="profesion">
-                <option value="" disabled selected>Selecciona tu profesión</option>
-                <option value="Plomero">Plomero</option>
-                <option value="Electricista">Electricista</option>
-                <option value="Carpintero">Carpintero</option>
-                <option value="Mecánico">Mecánico</option>
-                <option value="Jardinero">Jardinero</option>
-                <option value="Pintor">Pintor</option>
-                <option value="Diseñador Gráfico">Diseñador Gráfico</option>
-                <option value="Desarrollador Web">Desarrollador Web</option>
-                <option value="Contador">Contador</option>
-                <option value="Abogado">Abogado</option>
-                <option value="Chef">Chef</option>
-                <option value="Fotógrafo">Fotógrafo</option>
-                <option value="Profesor Particular">Profesor Particular</option>
-                <option value="Otro">Otro</option>
+      </div>
+      
+      <div class="form-section">
+        <form>
+          <div class="form-group">
+            <label for="clientName">Nombre del Cliente:</label>
+            <input type="text" id="clientName" name="clientName" required />
+          </div>
+          
+          <div class="form-group">
+            <label for="serviceType">Servicio Requerido:</label>
+            <select id="serviceType" name="serviceType">
+              <option value="limpieza">Limpieza</option>
+              <option value="reparacion">Reparación</option>
+              <option value="construccion">Construcción</option>
+              <option value="electricidad">Electricidad</option>
+              <option value="plomeria">Plomería</option>
+              <option value="pintura">Pintura</option>
             </select>
-        </div>
-
-        <button type="submit" class="form-submit-btn">
-            <i class="fa-solid fa-bell"></i> Suscribirse
-        </button>
-
-    </form>
-</div>
+          </div>
+          
+          <div class="form-group">
+            <label for="description">Descripción:</label>
+            <textarea id="description" name="description" required></textarea>
+          </div>
+          
+          <div class="form-group price-group">
+            <label for="price">Precio del Servicio:</label>
+            <input type="number" id="price" name="price" required />
+          </div>
+          
+          <div class="form-group">
+            <label for="invoiceCode">Código de Factura:</label>
+            <input type="text" id="invoiceCode" name="invoiceCode" required onchange="updateInvoice(this.value)" value="FAC-001" />
+          </div>
+          
+          <div class="date-group">
+            <div class="form-group">
+              <label for="startDate">Fecha de Inicio:</label>
+              <input type="date" id="startDate" name="startDate" required />
+            </div>
+            
+            <div class="form-group">
+              <label for="endDate">Fecha de Fin:</label>
+              <input type="date" id="endDate" name="endDate" required />
+            </div>
+          </div>
+          
+          <div class="terms-group">
+            <input type="checkbox" id="terms" required />
+            <label for="terms">Acepto los términos y condiciones del servicio</label>
+          </div>
+          
+          <button type="submit" class="execute-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="M12 5l7 7-7 7"></path>
+            </svg>
+            Ejecutar Contrato
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function updateInvoice(value) {
+      document.getElementById('invoiceDisplay').textContent = value;
+    }
+  </script>
