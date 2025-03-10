@@ -5,9 +5,10 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
 import { FormularioComponent } from './pages/formulario/formulario.component';
 import { ServiciosComponent } from './pages/servicios/servicios.component';
 import { Pagina404Component } from './pages/pagina404/pagina404.component';
-import { FormularioProductoComponent } from './components/formulario-producto/formulario-producto.component';
 import { AgregarComponent } from './pages/agregar/agregar.component';
 import { EditarserComponent } from './pages/editarser/editarser.component';
+import { LoginComponent } from './pages/login/login.component';
+import { loginGuard } from './guards/login.guard';
 
 export const routes: Routes = [
     {
@@ -28,7 +29,8 @@ export const routes: Routes = [
     },
     {
         path:'formulario',
-        component:FormularioComponent
+        component:FormularioComponent,
+        canActivate:[loginGuard]
     },
     {
         path:'agregar',
@@ -39,10 +41,14 @@ export const routes: Routes = [
         component:EditarserComponent
     },
     {
-        path:'**',
+        path:'',
         component:Pagina404Component
     },
 
+    {
+        path:'login',
+        component:LoginComponent
+    },
     {
         path:'',
         redirectTo:'/home',

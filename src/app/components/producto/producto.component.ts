@@ -24,4 +24,6 @@ export class ProductoComponent {
   toggleDetails(servicio: any) {
     servicio.showDetails = !servicio.showDetails;
   }
+
+
 }

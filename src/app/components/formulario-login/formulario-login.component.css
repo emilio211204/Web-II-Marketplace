@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-size: cover;
+}
+
+.login-container {
+    margin-top: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    padding: 15px; /* Añadido para asegurar un buen espaciado en pantallas pequeñas */
+}
+
+.login-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    animation: slideIn 1s ease-out;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.input-group label {
+    font-size: 14px;
+    color: #888;
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    transition: 0.3s;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #2575fc;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+    top: -25px;
+    left: 10px;
+    font-size: 12px;
+    color: #2575fc;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #2575fc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #1d60c0;
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.signup-link a {
+    color: #2575fc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries - Responsividad */
+
+@media (max-width: 768px) {
+    body {
+        background: linear-gradient(45deg, #6a11cb, #2575fc);
+    }
+
+    .login-form {
+        padding: 20px;
+        max-width: 90%; /* Hace que el formulario ocupe un 90% del ancho en pantallas pequeñas */
+    }
+
+    h2 {
+        font-size: 20px; /* Se reduce el tamaño del texto en pantallas pequeñas */
+    }
+
+    .btn-submit {
+        padding: 10px; /* Ajuste de tamaño en pantallas pequeñas */
+    }
+
+    .signup-link p {
+        font-size: 14px; /* Texto más pequeño para pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        padding: 10px; /* Asegura que haya un buen espaciado en móviles */
+    }
+
+    .login-form {
+        padding: 15px; /* Menos relleno en pantallas muy pequeñas */
+        max-width: 100%; /* El formulario ocupará el 100% del ancho */
+    }
+
+    .btn-submit {
+        padding: 12px;
+        font-size: 14px; /* Ajusta el tamaño del texto del botón */
+    }
+
+    h2 {
+        font-size: 18px; /* Reducción de tamaño del título */
+    }
+}

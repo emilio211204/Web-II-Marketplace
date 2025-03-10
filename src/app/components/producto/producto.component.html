@@ -32,6 +32,12 @@
       <p><strong>Teléfono:</strong> <a href="tel:{{ servicio.telefono }}">{{ servicio.telefono }}</a></p>
       <p><strong>Dirección:</strong> {{ servicio.direccion }}</p>
     </div>
+    <div>
+      <button [routerLink]="['/login']">
+        Contratar
+      </button>
+    </div>
+    
   </div>
   }
 </div>

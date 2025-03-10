@@ -45,6 +45,8 @@ export function app(): express.Express {
 
 function run(): void {
   const port = process.env['PORT'] || 4000;
+  
+  
 
   // Start up the Node server
   const server = app();
@@ -52,5 +54,6 @@ function run(): void {
     console.log(`Node Express server listening on http://localhost:${port}`);
   });
 }
+
 
 run();
