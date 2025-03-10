@@ -18,4 +18,12 @@ export class NavComponent {
     this.menuAbierto = false;
   }
 
+  autenticado(): boolean {
+    if (localStorage.getItem('login') === 'true') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
 }

@@ -1,22 +1,30 @@
 <nav>
-    <a routerLink="/" class="logo">
-      <img src="assets/imagenes/workana.jpg" alt="Logo" class="logo-icon">
-    </a>
-  
-    <!-- Botón menú hamburguesa -->
-    <div class="menu-toggle" (click)="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  
-    <!-- Menú de navegación -->
-    <ul [class.active]="menuAbierto">
-      <li><a routerLink="home" (click)="cerrarMenu()">Inicio</a></li>
-      <li><a routerLink="nosotros" (click)="cerrarMenu()">Nosotros</a></li>
-      <li><a routerLink="servicios" (click)="cerrarMenu()">Servicios</a></li>
-      <li><a routerLink="contacto" (click)="cerrarMenu()">Contacto</a></li>
-      <li><a routerLink="formulario" (click)="cerrarMenu()">Contrato</a></li>
-    </ul>
-  </nav>
-  
+  <a routerLink="/" class="logo">
+    <img src="assets/imagenes/workana.jpg" alt="Logo" class="logo-icon">
+  </a>
+
+  <!-- Botón menú hamburguesa -->
+  <div class="menu-toggle" (click)="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <!-- Menú de navegación -->
+  <ul [class.active]="menuAbierto">
+    @if (!autenticado()) {
+    <li><a routerLink="home" (click)="cerrarMenu()">Inicio</a></li>
+    }
+    @if (!autenticado()) {
+    <li><a routerLink="nosotros" (click)="cerrarMenu()">Nosotros</a></li>
+    }
+    <li><a routerLink="servicios" (click)="cerrarMenu()">Servicios</a></li>
+    @if (!autenticado()) {
+    <li><a routerLink="contacto" (click)="cerrarMenu()">Contacto</a></li>
+    }
+    <li><a routerLink="formulario" (click)="cerrarMenu()">Contrato</a></li>
+    @if (!autenticado()) {
+    <li><a routerLink="login" (click)="cerrarMenu()">Iniciar Sesión</a></li>
+    }
+  </ul>
+</nav>

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ServiciosService } from '../../service/servicios.service';
-import { Router } from 'express';
-import { RouterModule } from '@angular/router';
+
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-producto',
@@ -12,7 +12,7 @@ import { RouterModule } from '@angular/router';
 })
 export class ProductoComponent {
 
-  constructor(private servicio: ServiciosService) { }
+  constructor(private servicio: ServiciosService, private route: Router) { }
   
   servicios: any[] = [];
   ngOnInit() {
@@ -25,5 +25,8 @@ export class ProductoComponent {
     servicio.showDetails = !servicio.showDetails;
   }
 
-
+  logout() {
+    localStorage.setItem('login', 'false');
+    this.route.navigate(['login']);
+  }
 }
