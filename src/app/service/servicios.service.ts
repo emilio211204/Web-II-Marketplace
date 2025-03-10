@@ -9,7 +9,7 @@ export class ServiciosService {
 
   constructor( private http: HttpClient) { }
 
-  private API_SERVICIOS = 'http://localhost:3002/servicios';
+  private API_SERVICIOS = 'http://localhost:3000/servicios';
 
   //Metodo para enviar los servicios
   postServicios(servicios: any):Observable<any> {
