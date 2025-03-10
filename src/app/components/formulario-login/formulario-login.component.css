@@ -5,161 +5,276 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #03dac6, #ff0266, #03dac6);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-size: cover;
+    background-size: 200% 200%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .login-container {
-    margin-top: 180px;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100%;
-    padding: 15px; /* Añadido para asegurar un buen espaciado en pantallas pequeñas */
+    padding: 20px;
+    width: 100%;
+    max-width: 900px;
+    margin-top: 140px;
+    margin-left: 200px;
+}
+
+.login-image {
+    width: 450px;
+    height: 100%;
+    border-radius: 20px 0 0 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.login-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .login-form {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 0 20px 20px 0;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
     width: 100%;
-    max-width: 400px;
-    animation: slideIn 1s ease-out;
+    max-width: 450px;
+    position: relative;
+    overflow: hidden;
+    transform: translateY(0);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.login-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(to right, #03dac6, #ff0266);
 }
 
 h2 {
     text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-    font-size: 24px;
-    font-weight: bold;
+    margin-bottom: 30px;
+    color: #1a1a1a;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(to right, #03dac6, #ff0266);
+    border-radius: 2px;
 }
 
 .input-group {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     position: relative;
 }
 
 .input-group label {
     font-size: 14px;
-    color: #888;
+    color: #666;
     position: absolute;
-    top: -10px;
-    left: 10px;
-    transition: 0.3s;
+    top: 15px;
+    left: 15px;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
 }
 
 .input-group input {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 15px;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
     font-size: 16px;
     outline: none;
-    transition: border-color 0.3s;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 0;
 }
 
-.input-group input:focus {
-    border-color: #2575fc;
+.input-group input:focus,
+.input-group input:valid {
+    border-color: #03dac6;
+    box-shadow: 0 0 8px rgba(3, 218, 198, 0.3);
 }
 
 .input-group input:focus + label,
-.input-group input:not(:placeholder-shown) + label {
-    top: -25px;
+.input-group input:valid + label {
+    top: -10px;
     left: 10px;
     font-size: 12px;
-    color: #2575fc;
+    color: #ff0266;
+    background-color: white;
+    padding: 0 5px;
 }
 
 .btn-submit {
     width: 100%;
-    padding: 12px;
-    background-color: #2575fc;
+    padding: 15px;
+    background: linear-gradient(to right, #03dac6, #ff0266);
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-submit::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #ff0266, #03dac6);
+    transition: all 0.4s ease;
+    z-index: -1;
+}
+
+.btn-submit:hover::before {
+    left: 0;
 }
 
 .btn-submit:hover {
-    background-color: #1d60c0;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn-submit:active {
+    transform: translateY(1px);
 }
 
 .signup-link {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 25px;
+    position: relative;
+    z-index: 1;
 }
 
 .signup-link a {
-    color: #2575fc;
+    color: #ff0266;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .signup-link a:hover {
-    text-decoration: underline;
+    color: #03dac6;
 }
 
-@keyframes slideIn {
-    0% {
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
         opacity: 0;
-        transform: translateY(-20px);
+        transform: translateY(30px);
     }
-    100% {
+    to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
 /* Media Queries - Responsividad */
+@media (max-width: 992px) {
+    .login-container {
+        flex-direction: column;
+        max-width: 450px;
+    }
+    
+    .login-image {
+        width: 100%;
+        height: 200px;
+        border-radius: 20px 20px 0 0;
+    }
+    
+    .login-form {
+        border-radius: 0 0 20px 20px;
+    }
+}
 
 @media (max-width: 768px) {
-    body {
-        background: linear-gradient(45deg, #6a11cb, #2575fc);
-    }
-
     .login-form {
-        padding: 20px;
-        max-width: 90%; /* Hace que el formulario ocupe un 90% del ancho en pantallas pequeñas */
+        padding: 30px;
+        max-width: 100%;
     }
-
+    
     h2 {
-        font-size: 20px; /* Se reduce el tamaño del texto en pantallas pequeñas */
+        font-size: 24px;
     }
-
+    
     .btn-submit {
-        padding: 10px; /* Ajuste de tamaño en pantallas pequeñas */
-    }
-
-    .signup-link p {
-        font-size: 14px; /* Texto más pequeño para pantallas pequeñas */
+        padding: 12px;
     }
 }
 
 @media (max-width: 480px) {
     .login-container {
-        padding: 10px; /* Asegura que haya un buen espaciado en móviles */
+        padding: 15px;
     }
-
+    
+    .login-image {
+        height: 150px;
+    }
+    
     .login-form {
-        padding: 15px; /* Menos relleno en pantallas muy pequeñas */
-        max-width: 100%; /* El formulario ocupará el 100% del ancho */
+        padding: 25px;
     }
-
+    
+    h2 {
+        font-size: 22px;
+    }
+    
+    .input-group input {
+        padding: 12px;
+    }
+    
     .btn-submit {
         padding: 12px;
-        font-size: 14px; /* Ajusta el tamaño del texto del botón */
-    }
-
-    h2 {
-        font-size: 18px; /* Reducción de tamaño del título */
+        font-size: 14px;
     }
 }
