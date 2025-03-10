@@ -25,7 +25,8 @@ export const routes: Routes = [
     },
     {
         path:'servicios',
-        component:ServiciosComponent
+        component:ServiciosComponent,
+        canActivate:[loginGuard]
     },
     {
         path:'formulario',

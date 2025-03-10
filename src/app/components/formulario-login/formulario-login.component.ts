@@ -19,7 +19,7 @@ export class FormularioLoginComponent {
     this.servicio.postLogin(formulario.value).subscribe(acceso => {
       let token = acceso.accessToken
       if (token != null) {
-        localStorage.setItem('token', token);
+        localStorage.setItem('login', "true");
         this.route.navigate(['servicios']);
       }
     });
