@@ -9,6 +9,7 @@ import { AgregarComponent } from './pages/agregar/agregar.component';
 import { EditarserComponent } from './pages/editarser/editarser.component';
 import { LoginComponent } from './pages/login/login.component';
 import { loginGuard } from './guards/login.guard';
+import { servicioGuard } from './guards/servicio.guard';
 
 export const routes: Routes = [
     {
@@ -26,7 +27,7 @@ export const routes: Routes = [
     {
         path:'servicios',
         component:ServiciosComponent,
-        canActivate:[loginGuard]
+        canMatch:[servicioGuard]
     },
     {
         path:'formulario',
