@@ -114,4 +114,36 @@
         </div>
       </div>
     </section>
+
+    <script>
+      // Añadir animaciones al hacer scroll
+      document.addEventListener('DOMContentLoaded', function() {
+        // Función para manejar las animaciones al hacer scroll
+        function animateOnScroll() {
+          const elements = document.querySelectorAll('.service-card, .service-icon-card, .info-content');
+          
+          elements.forEach(element => {
+            const elementPosition = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight * 0.8;
+            
+            if (elementPosition < screenPosition) {
+              element.style.opacity = '1';
+              element.style.transform = 'translateY(0)';
+            }
+          });
+        }
+        
+        // Aplicar estilos iniciales
+        const elements = document.querySelectorAll('.service-card, .service-icon-card, .info-content');
+        elements.forEach(element => {
+          element.style.opacity = '0';
+          element.style.transform = 'translateY(30px)';
+          element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        });
+        
+        // Comprobar posición al cargar y hacer scroll
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Comprobar posición inicial
+      });
+    </script>
   </body>
