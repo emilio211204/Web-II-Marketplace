@@ -1,56 +1,86 @@
-
+/* Fondo animado con degradado */
 :host {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #03dac6;
+    background: linear-gradient(-45deg, #000000, #1a1a1a, #333333, #000000);
+    background-size: 400% 400%;
+    animation: gradientBG 6s ease infinite;
 }
 
+/* Animación del fondo */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
+/* Contenedor con efecto de iluminación */
 .error-container {
     text-align: center;
-    background-color: white;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #0f0f0f, #1e1e1e);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
     max-width: 500px;
     width: 90%;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: box-shadow 0.3s ease;
 }
 
+/* Efecto de iluminación al pasar el mouse */
+.error-container:hover {
+    box-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
+}
 
+/* Número de error con efecto de luz */
 .error-title {
-    font-size: 100px;
+    font-size: 120px;
     font-weight: bold;
-    color: #ff0266;
+    color: #fff;
     margin: 0;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6), 0px 0px 20px rgba(255, 255, 255, 0.8);
+    transition: text-shadow 0.3s ease;
 }
 
+.error-container:hover .error-title {
+    text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8), 0px 0px 30px rgba(255, 255, 255, 1);
+}
+
+/* Mensaje de error */
 .error-message {
-    font-size: 24px;
-    color: #333;
+    font-size: 26px;
+    color: #fff;
     margin: 10px 0;
+    font-weight: bold;
 }
 
-
+/* Descripción del error */
 .error-description {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 20px;
+    font-size: 18px;
+    color: #bbb;
+    margin-bottom: 25px;
 }
 
-
+/* Botón con efecto de brillo */
 .error-btn {
-    background-color: #ff0266;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 5px;
+    background: linear-gradient(135deg, #ffffff, #cccccc);
+    color: black;
+    padding: 12px 25px;
+    border-radius: 8px;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: bold;
     display: inline-block;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
+/* Efecto al pasar el mouse sobre el botón */
 .error-btn:hover {
-    background-color: #d10053;
+    background: #ffffff;
+    color: black;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+    transform: scale(1.05);
 }

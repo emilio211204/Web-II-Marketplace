@@ -2,7 +2,7 @@
 .form-container {
     width: 90%;
     max-width: 600px;
-    margin-top: 280px;
+    margin-top: 580px;
     margin: 30px auto;
     padding: 20px;
     background: #e8e3f1; /* Fondo oscuro moderno */
@@ -13,7 +13,7 @@
 }
 
 /* Título del formulario */
-.form-container h2 {
+.form-container h2 { 
     color: #03dac6;
     font-size: 24px;
     margin-bottom: 20px;
