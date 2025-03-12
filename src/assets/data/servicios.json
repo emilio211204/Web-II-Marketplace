@@ -2,12 +2,12 @@
   "servicios": [
     {
       "id": "b02f",
-      "nombre": "Juan Lopez",
+      "nombre": "Juan Heredia",
       "email": "maria@gmail.com",
-      "profesion": "desarrollador",
+      "profesion": "Desarrollador",
       "telefono": "0996620363",
       "direccion": "Loja",
-      "imagen": "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=600"
+      "imagen": "https://images.pexels.com/photos/4974914/pexels-photo-4974914.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
       "id": "fe4b",
@@ -61,34 +61,70 @@
       "profesion": "Medico",
       "telefono": "0981236074",
       "direccion": "Guamani",
-      "imagen": "https://images.pexels.com/photos/3714743/pexels-photo-3714743.jpeg?auto=compress&cs=tinysrgb&w=600"
+      "imagen": "https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
       "id": "f02c",
       "nombre": "Eduardo Taco",
       "email": "edu@gmail.com",
       "profesion": "Chef",
-      "telefono": "09142536721",
+      "telefono": "0914253672",
       "direccion": "Villaflora",
       "imagen": "https://images.pexels.com/photos/3814446/pexels-photo-3814446.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
       "id": "5826",
-      "nombre": "emilio",
-      "email": "emilio@gmail.com",
-      "profesion": "MMedico",
+      "nombre": "Isabel Guerra",
+      "email": "isabel@gmail.com",
+      "profesion": "Arquitecto",
       "telefono": "0254848544",
-      "direccion": "hhjj",
-      "imagen": "https://images.pexels.com/photos/30613482/pexels-photo-30613482/free-photo-of-hombre-leyendo-un-cartel-en-un-cafe-minimalista.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+      "direccion": "Floresta",
+      "imagen": "https://images.pexels.com/photos/4491459/pexels-photo-4491459.jpeg?auto=compress&cs=tinysrgb&w=600"
     },
     {
       "id": "170e",
-      "nombre": "franco",
-      "email": "franco@gmail.com",
-      "profesion": "Medico",
+      "nombre": "Eduardo Castañeda",
+      "email": "edu@gmail.com",
+      "profesion": "Fotógrafo",
       "telefono": "0254848544",
-      "direccion": "hhjj",
-      "imagen": "https://images.pexels.com/photos/30613482/pexels-photo-30613482/free-photo-of-hombre-leyendo-un-cartel-en-un-cafe-minimalista.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+      "direccion": "Tumbaco",
+      "imagen": "https://images.pexels.com/photos/1728163/pexels-photo-1728163.jpeg?auto=compress&cs=tinysrgb&h=226.525&fit=crop&w=253.17499999999998&dpr=1"
+    },
+    {
+      "id": "189a",
+      "nombre": "Guillermo Toscano",
+      "email": "guillermo@gmail.com",
+      "profesion": "Mecánico",
+      "telefono": "0941485024",
+      "direccion": "Puyo",
+      "imagen": "https://images.pexels.com/photos/3807277/pexels-photo-3807277.jpeg?auto=compress&cs=tinysrgb&w=600"
+    },
+    {
+      "nombre": "Martha Pantoja",
+      "email": "martha@gmail.com",
+      "profesion": "Estilista",
+      "telefono": "0912358967",
+      "direccion": "Ibarra",
+      "imagen": "https://media.istockphoto.com/id/853924196/es/foto/peluquer%C3%ADa-mujer-en-pie-en-el-sal%C3%B3n-de.jpg?b=1&s=612x612&w=0&k=20&c=OswqtwodrjI7FmWSOY-zWIyuBWrsGN0MD-sBNafOjZE=",
+      "id": "bi2bdCv"
+    },
+    {
+      "nombre": "Roberto Aguilar",
+      "email": "robert@gmail.com",
+      "profesion": "Zapatero",
+      "telefono": "0945236871",
+      "direccion": "Salinas",
+      "imagen": "https://images.pexels.com/photos/5894229/pexels-photo-5894229.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "id": "LMj3QJ0"
+    },
+    {
+      "nombre": "Alonso Hurtado",
+      "email": "alonso@gmail.com",
+      "profesion": "Plomero",
+      "telefono": "09997893842",
+      "direccion": "San Bartolo",
+      "imagen": "https://media.istockphoto.com/id/169270269/es/foto/fontaneros-trabajando-en-tuber%C3%ADas-con-fregadero.jpg?b=1&s=612x612&w=0&k=20&c=DoK5eFC7cuXZY_rGXJl3Cx5X9C1tgLf11iZA96Okp0k=",
+      "id": "bN57_kY"
     }
   ]
 }
