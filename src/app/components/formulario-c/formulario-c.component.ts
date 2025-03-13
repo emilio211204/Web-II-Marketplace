@@ -13,7 +13,7 @@ export class FormularioCComponent {
 
 
 cliente: Cliente = {
-    id: 0,
+  
     nombre: '',
     apellido: '',
     email: '',
@@ -41,7 +41,6 @@ cliente: Cliente = {
 
   resetForm(): void {
     this.cliente = {
-      id: 0,
       nombre: '',
       apellido: '',
       email: '',
