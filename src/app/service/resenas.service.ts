@@ -9,8 +9,8 @@ export interface Resena {
   comentario: string;
   fechacomentario: Date;
   calificacion: number;
-  cliente: Cliente; 
-  proveedor: Proveedor; 
+  cliente: string; 
+  proveedor: string; 
 }
 
 
