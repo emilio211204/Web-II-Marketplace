@@ -1,0 +1,77 @@
+<div class="container">
+    <h2>Formulario de Contrato</h2>
+    <form (ngSubmit)="guardarCon()" #formulario="ngForm">
+      <div class="form-group">
+        <label for="nombreContrato">Nombre del Contrato:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nombreContrato"
+          name="nombreContrato"
+          [(ngModel)]="contrato.nombreContrato"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="fechaInicio">Fecha de Inicio:</label>
+        <input
+          type="date"
+          class="form-control"
+          id="fechaInicio"
+          name="fechaInicio"
+          [(ngModel)]="contrato.fechaInicio"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="fechaFin">Fecha de Fin:</label>
+        <input
+          type="date"
+          class="form-control"
+          id="fechaFin"
+          name="fechaFin"
+          [(ngModel)]="contrato.fechaFin"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="estado">Estado:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="estado"
+          name="estado"
+          [(ngModel)]="contrato.estado"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="cliente">Cliente:</label>
+        <select
+          class="form-control"
+          id="cliente"
+          name="cliente"
+          [(ngModel)]="contrato.cliente"
+          required
+        >
+          <option  *ngFor="let cliente of clientes" [ngValue]="cliente">{{ cliente.nombre }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="prestaciones">Prestaciones:</label>
+        <select
+          class="form-control"
+          id="prestaciones"
+          name="prestaciones"
+          [(ngModel)]="contrato.prestaciones"
+          multiple
+          required
+        >
+          <option *ngFor="let prestacion of prestaciones" [ngValue]="prestacion">{{ prestacion.nombre }}</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!formulario.form.valid">
+        Guardar
+      </button>
+    </form>
+  </div>

@@ -1,0 +1,23 @@
+<form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="comentario">Comentario:</label>
+      <textarea id="comentario" [(ngModel)]="resena.comentario" name="comentario" required></textarea>
+    </div>
+    <div>
+      <label for="fechacomentario">Fecha de Comentario:</label>
+      <input type="date" id="fechacomentario" [(ngModel)]="resena.fechacomentario" name="fechacomentario" required>
+    </div>
+    <div>
+      <label for="calificacion">Calificación:</label>
+      <input type="number" id="calificacion" [(ngModel)]="resena.calificacion" name="calificacion" min="1" max="5" required>
+    </div>
+    <div>
+      <label for="cliente">Cliente:</label>
+      <input type="text" id="cliente" [(ngModel)]="resena.cliente" name="cliente" required>
+    </div>
+    <div>
+      <label for="proveedor">Proveedor:</label>
+      <input type="text" id="proveedor" [(ngModel)]="resena.proveedor" name="proveedor" required>
+    </div>
+    <button type="submit">Crear Reseña</button>
+  </form>

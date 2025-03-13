@@ -1,0 +1,96 @@
+<div class="container">
+    <h2>Formulario de Proveedor</h2>
+    <form (ngSubmit)="guardarP()" #formulario="ngForm">
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nombre"
+          name="nombre"
+          [(ngModel)]="proveedor.nombre"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="especialidad">Especialidad:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="especialidad"
+          name="especialidad"
+          [(ngModel)]="proveedor.especialidad"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="correo">Correo:</label>
+        <input
+          type="email"
+          class="form-control"
+          id="correo"
+          name="correo"
+          [(ngModel)]="proveedor.correo"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="telefono">Teléfono:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="telefono"
+          name="telefono"
+          [(ngModel)]="proveedor.telefono"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="tarifas">Tarifas:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="tarifas"
+          name="tarifas"
+          [(ngModel)]="proveedor.tarifas"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="experiencia">Experiencia:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="experiencia"
+          name="experiencia"
+          [(ngModel)]="proveedor.experiencia"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="username"
+          name="username"
+          [(ngModel)]="proveedor.username"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          name="password"
+          [(ngModel)]="proveedor.password"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!formulario.form.valid">
+        Guardar
+      </button>
+    </form>
+  </div>

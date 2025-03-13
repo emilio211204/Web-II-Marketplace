@@ -11,6 +11,10 @@ import { LoginComponent } from './pages/login/login.component';
 import { loginGuard } from './guards/login.guard';
 import { servicioGuard } from './guards/servicio.guard';
 import { ClienteComponent } from './pages/cliente/cliente.component';
+import { ProveedorComponent } from './pages/proveedor/proveedor.component';
+import { ContratoComponent } from './pages/contrato/contrato.component';
+import { PrestacionesComponent } from './pages/prestaciones/prestaciones.component';
+import { ResenasComponent } from './pages/resenas/resenas.component';
 
 export const routes: Routes = [
     {
@@ -55,6 +59,22 @@ export const routes: Routes = [
     {
         path:'cliente',
         component:ClienteComponent
+    },
+    {
+        path:'proveedor',
+        component:ProveedorComponent
+    },
+    {
+        path:'contrato',
+        component:ContratoComponent
+    },
+    {
+        path:'prestaciones',
+        component:PrestacionesComponent
+    },
+    {
+        path:'resena',
+        component:ResenasComponent
     },
     {
         path:'',
