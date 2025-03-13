@@ -10,6 +10,7 @@ import { EditarserComponent } from './pages/editarser/editarser.component';
 import { LoginComponent } from './pages/login/login.component';
 import { loginGuard } from './guards/login.guard';
 import { servicioGuard } from './guards/servicio.guard';
+import { ClienteComponent } from './pages/cliente/cliente.component';
 
 export const routes: Routes = [
     {
@@ -50,6 +51,10 @@ export const routes: Routes = [
     {
         path:'login',
         component:LoginComponent
+    },
+    {
+        path:'cliente',
+        component:ClienteComponent
     },
     {
         path:'',
