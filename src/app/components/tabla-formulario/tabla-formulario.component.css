@@ -1,7 +1,7 @@
 /* Estilos generales */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #121212; /* Fondo oscuro para resaltar la tabla */
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0c0c0c, #1a1a1a); /* Fondo degradado negro */
     color: #ffffff;
     margin: 0;
     padding: 20px;
@@ -14,40 +14,43 @@ body {
     max-width: 1200px;
     margin: 20px auto;
     overflow-x: auto;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 20px;
+    background: linear-gradient(145deg, #121212, #1e1e1e); /* Degradado oscuro */
+    padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.1);
 }
 
 /* Títulos */
 h2 {
-    color: #ff0266;
-    font-size: 24px;
+    color: #ffffff;
+    font-size: 26px;
     text-transform: uppercase;
     margin-bottom: 20px;
     text-align: center;
+    text-shadow: 0px 0px 12px rgba(255, 255, 255, 0.7); /* Brillo elegante */
 }
 
 /* Estilo de la tabla */
 table {
     width: 100%;
     border-collapse: collapse;
-    background:white;
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
 }
 
 /* Encabezados */
 thead {
-    background: #03dac6;
-    color: #121212;
+    background: linear-gradient(145deg, #222222, #333333);
+    color: white;
 }
 
 th {
     padding: 12px;
     text-transform: uppercase;
     font-size: 14px;
+    text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.5);
 }
 
 /* Celdas */
@@ -68,43 +71,48 @@ tbody tr:nth-child(even) {
     height: 50px;
     object-fit: cover;
     border-radius: 5px;
-    border: 2px solid #ff0266;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
 }
 
 /* Botones */
 button {
-    padding: 8px 12px;
+    padding: 10px 14px;
     border: none;
     border-radius: 5px;
     font-size: 14px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.3);
 }
 
 /* Botón de Editar */
 button[routerLink] {
-    background: #03dac6;
-    color: #121212;
+    background: linear-gradient(145deg, #444444, #555555);
+    color: white;
     font-weight: bold;
 }
 
 button[routerLink]:hover {
-    background: #02c5a3;
+    background: linear-gradient(145deg, #555555, #666666);
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.6);
 }
 
 /* Botón de Eliminar */
-button:hover {
-    transform: scale(1.05);
-}
-
 button[click] {
-    background: #ff0266;
+    background: linear-gradient(145deg, #880808, #aa1010);
     color: white;
     font-weight: bold;
 }
 
 button[click]:hover {
-    background: #d5004f;
+    background: linear-gradient(145deg, #aa1010, #cc2222);
+    box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.6);
+}
+
+/* Animación sutil en botones */
+button:hover {
+    transform: scale(1.05);
 }
 
 /* Responsividad */
@@ -121,6 +129,6 @@ button[click]:hover {
 
     button {
         font-size: 12px;
-        padding: 6px 10px;
+        padding: 8px 12px;
     }
 }
