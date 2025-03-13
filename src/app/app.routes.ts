@@ -66,7 +66,8 @@ export const routes: Routes = [
     },
     {
         path:'contrato',
-        component:ContratoComponent
+        component:ContratoComponent,
+        canActivate:[loginGuard]
     },
     {
         path:'prestaciones',

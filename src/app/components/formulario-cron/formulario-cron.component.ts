@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { Contrato, ContratoService } from '../../service/contrato.service';
 import { Cliente, ClienteService } from '../../service/cliente.service';
 import { Prestaciones, PrestacionesService } from '../../service/prestaciones.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulario-cron',
@@ -12,6 +13,7 @@ import { Prestaciones, PrestacionesService } from '../../service/prestaciones.se
   styleUrl: './formulario-cron.component.css'
 })
 export class FormularioCronComponent {
+ 
 
   contrato: Contrato = {
     nombreContrato: '',
@@ -28,7 +30,8 @@ export class FormularioCronComponent {
   constructor(
     private servicio: ContratoService,
     private servicioCliente: ClienteService,
-    private servicioPrestaciones: PrestacionesService
+    private servicioPrestaciones: PrestacionesService,
+    private route:Router
 
   ) {}
 
@@ -39,14 +42,20 @@ export class FormularioCronComponent {
 
   cargarClientes(): void {
     this.servicioCliente.getClientes().subscribe({
-      next: (clientes) => (this.clientes = clientes),
+      next: (clientes) => {
+        console.log('Clientes cargados:', clientes); // Agrega esto para verificar los datos
+        this.clientes = clientes;
+      },
       error: (error) => console.error('Error al cargar clientes:', error),
     });
   }
-
+  
   cargarPrestaciones(): void {
     this.servicioPrestaciones.getPrestaciones().subscribe({
-      next: (prestaciones) => (this.prestaciones = prestaciones),
+      next: (prestaciones) => {
+        console.log('Prestaciones cargadas:', prestaciones); // Agrega esto para verificar los datos
+        this.prestaciones = prestaciones;
+      },
       error: (error) => console.error('Error al cargar prestaciones:', error),
     });
   }
@@ -74,6 +83,12 @@ export class FormularioCronComponent {
       cliente: {} as Cliente,
       prestaciones: [],
     };
+  }
+
+    
+  logout() {
+    localStorage.setItem('login', 'false');
+    this.route.navigate(['home']);
   }
 }
 

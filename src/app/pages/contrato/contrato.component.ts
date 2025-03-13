@@ -6,7 +6,7 @@ import { FormularioCronComponent } from "../../components/formulario-cron/formul
 @Component({
   selector: 'app-contrato',
   standalone: true,
-  imports: [FormularioCComponent, FormularioContratoComponent, FormularioCronComponent],
+  imports: [ FormularioCronComponent],
   templateUrl: './contrato.component.html',
   styleUrl: './contrato.component.css'
 })

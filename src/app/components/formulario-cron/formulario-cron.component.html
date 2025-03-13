@@ -56,9 +56,13 @@
           [(ngModel)]="contrato.cliente"
           required
         >
-          <option *ngFor="let cliente of clientes" [ngValue]="cliente">{{ cliente.nombre }}</option>
+          <option value="" disabled selected  > Seleccione un cliente</option>
+          @for (cliente of clientes; track $index) {
+            <option [ngValue]="cliente">{{ cliente.nombre }} </option>
+          }
         </select>
       </div>
+      
       <div class="form-group">
         <label for="prestaciones">Prestaciones:</label>
         <select
@@ -66,15 +70,19 @@
           id="prestaciones"
           name="prestaciones"
           [(ngModel)]="contrato.prestaciones"
-          multiple
           required
         >
-          <option *ngFor="let prestacion of prestaciones" [ngValue]="prestacion">{{ prestacion.nombre }}</option>
+          <option value="" disabled selected>Seleccione una prestacion</option>
+          @for (prestacion of prestaciones; track $index) {
+            <option [ngValue]="prestacion"> {{ prestacion.nombre }}</option>
+          }
         </select>
       </div>
+      
       <button type="submit" class="btn btn-primary" [disabled]="!formulario.form.valid">
         Guardar
       </button>
     </form>
   </div>
 </div>
+<button (click)="logout()">Cerrar Sesión</button>

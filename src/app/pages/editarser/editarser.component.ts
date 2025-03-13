@@ -44,4 +44,9 @@ export class EditarserComponent {
       })
     })
   }
+  
+  logout() {
+    localStorage.setItem('login', 'false');
+    this.route.navigate(['login']);
+  }
 }

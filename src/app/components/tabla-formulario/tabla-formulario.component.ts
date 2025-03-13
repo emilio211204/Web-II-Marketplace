@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { ServiciosService } from '../../service/servicios.service';
 import { JsonPipe } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { routes } from '../../app.routes';
 
 @Component({
   selector: 'app-tabla-formulario',
@@ -11,7 +12,7 @@ import { RouterModule } from '@angular/router';
   styleUrl: './tabla-formulario.component.css'
 })
 export class TablaFormularioComponent {
-  constructor(private servicio: ServiciosService) { }
+  constructor(private servicio: ServiciosService , private route:Router) { }
   servicios: any[] = [];
 
   ngOnInit() {
@@ -23,5 +24,9 @@ export class TablaFormularioComponent {
     this.servicio.deleteServicios(id).subscribe(() => {
       window.location.reload();
     })
+  }
+  logout() {
+    localStorage.setItem('login', 'false');
+    this.route.navigate(['login']);
   }
 }

@@ -45,7 +45,10 @@
           [(ngModel)]="prestacion.proveedor"
           required
         >
-          <option *ngFor="let proveedor of proveedores" [ngValue]="proveedor">{{ proveedor.nombre }}</option>
+          <option value="" disabled selected >Seleccione un proveedor</option>
+          @for (proveedor of proveedores; track $index) {
+            <option [ngValue]="proveedor"> {{ proveedor.nombre }}</option>
+          }
         </select>
       </div>
       <button type="submit" class="btn btn-primary" [disabled]="!formulario.form.valid">

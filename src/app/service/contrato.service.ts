@@ -10,7 +10,7 @@ export interface Contrato {
   fechaInicio: Date;
   fechaFin: Date;
   estado: string;
-  cliente: Cliente;
+  cliente: Cliente ;
   prestaciones: Prestaciones[];
 }
 
