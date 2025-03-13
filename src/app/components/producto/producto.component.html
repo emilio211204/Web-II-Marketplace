@@ -16,9 +16,16 @@
     <br><br><br><br>
   </p>
 </div>
+<!-- producto.component.html -->
+<div class="filtro-container">
+  <div class="filtro-input">
+    <input type="text" [(ngModel)]="profesionBuscada" placeholder="Buscar por profesión" class="search-input" />
+    <button (click)="filtrarPorProfesion()" class="filtrar-btn">Filtrar</button>
+  </div>
+</div>
 
 <div class="card-container">
-  @for (servicio of servicios; track $index) {
+  @for (servicio of serviciosFiltrados; track servicio.id) {
   <div class="card">
     <div class="card-image" (click)="toggleDetails(servicio)">
       <img [src]="servicio.imagen" alt="Imagen de {{ servicio.nombre }}" class="service-image" />
@@ -37,10 +44,13 @@
         Contratar
       </button>
     </div>
-
   </div>
   }
-
-
+  @empty {
+  <div class="no-resultados">
+    No se encontraron servicios con la profesión ingresada
+  </div>
+  }
 </div>
 <button (click)="logout()">Cerra Sesión</button>
+

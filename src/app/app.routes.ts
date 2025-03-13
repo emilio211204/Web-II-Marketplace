@@ -27,7 +27,7 @@ export const routes: Routes = [
     {
         path:'servicios',
         component:ServiciosComponent,
-        canMatch:[servicioGuard]
+        
     },
     {
         path:'formulario',
