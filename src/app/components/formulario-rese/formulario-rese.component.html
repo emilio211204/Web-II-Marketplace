@@ -1,23 +1,41 @@
-<form (ngSubmit)="onSubmit()">
-    <div>
-      <label for="comentario">Comentario:</label>
-      <textarea id="comentario" [(ngModel)]="resena.comentario" name="comentario" required></textarea>
-    </div>
-    <div>
-      <label for="fechacomentario">Fecha de Comentario:</label>
-      <input type="date" id="fechacomentario" [(ngModel)]="resena.fechacomentario" name="fechacomentario" required>
-    </div>
-    <div>
-      <label for="calificacion">Calificación:</label>
-      <input type="number" id="calificacion" [(ngModel)]="resena.calificacion" name="calificacion" min="1" max="5" required>
-    </div>
-    <div>
-      <label for="cliente">Cliente:</label>
-      <input type="text" id="cliente" [(ngModel)]="resena.cliente" name="cliente" required>
-    </div>
-    <div>
-      <label for="proveedor">Proveedor:</label>
-      <input type="text" id="proveedor" [(ngModel)]="resena.proveedor" name="proveedor" required>
-    </div>
-    <button type="submit">Crear Reseña</button>
-  </form>
+<div class="container">
+  <img src="https://www.bubok.es/blog/wp-content/uploads/adult-g7162d9ca2_1280.jpg" alt="Imagen de reseñas" class="form-image">
+  <div class="form-content">
+    <h2>Formulario de Reseñas</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="comentario">Comentario:</label>
+        <textarea id="comentario" [(ngModel)]="resena.comentario" name="comentario" required class="form-control" placeholder="Escribe tu comentario aquí..."></textarea>
+      </div>
+      <div class="form-group">
+        <label for="fechacomentario">Fecha de Comentario:</label>
+        <input type="date" id="fechacomentario" [(ngModel)]="resena.fechacomentario" name="fechacomentario" required class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="calificacion">Calificación:</label>
+        <input type="number" id="calificacion" [(ngModel)]="resena.calificacion" name="calificacion" min="1" max="5" required class="form-control" placeholder="1-5">
+        <div class="rating-stars">
+          <input type="radio" id="star5" name="rating" value="5" [(ngModel)]="resena.calificacion">
+          <label for="star5">★</label>
+          <input type="radio" id="star4" name="rating" value="4" [(ngModel)]="resena.calificacion">
+          <label for="star4">★</label>
+          <input type="radio" id="star3" name="rating" value="3" [(ngModel)]="resena.calificacion">
+          <label for="star3">★</label>
+          <input type="radio" id="star2" name="rating" value="2" [(ngModel)]="resena.calificacion">
+          <label for="star2">★</label>
+          <input type="radio" id="star1" name="rating" value="1" [(ngModel)]="resena.calificacion">
+          <label for="star1">★</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="cliente">Cliente:</label>
+        <input type="text" id="cliente" [(ngModel)]="resena.cliente" name="cliente" required class="form-control" placeholder="Nombre del cliente">
+      </div>
+      <div class="form-group">
+        <label for="proveedor">Proveedor:</label>
+        <input type="text" id="proveedor" [(ngModel)]="resena.proveedor" name="proveedor" required class="form-control" placeholder="Nombre del proveedor">
+      </div>
+      <button type="submit" class="btn btn-primary">Crear Reseña</button>
+    </form>
+  </div>
+</div>
