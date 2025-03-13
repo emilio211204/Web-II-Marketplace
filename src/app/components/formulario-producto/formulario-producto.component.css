@@ -1,22 +1,30 @@
+/* Asegurar que el contenido no se superponga con el navbar */
+body {
+    padding-top: 190px; /* Ajusta este valor según la altura del navbar */
+    background: linear-gradient(135deg, #0c0c0c, #1a1a1a); /* Fondo degradado negro */
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
 /* Contenedor principal del formulario */
 .form-container {
     width: 90%;
     max-width: 600px;
-    margin-top: 580px;
-    margin: 30px auto;
-    padding: 20px;
-    background: #e8e3f1; /* Fondo oscuro moderno */
+    margin: 190px auto 60px;
+    padding: 25px;
+    background: linear-gradient(145deg, #121212, #1e1e1e); /* Fondo elegante con profundidad */
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.1);
     color: white;
     text-align: center;
 }
 
 /* Título del formulario */
 .form-container h2 { 
-    color: #03dac6;
+    color: #ffffff;
     font-size: 24px;
     margin-bottom: 20px;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6); /* Brillo sutil */
 }
 
 /* Estilos para las filas del formulario */
@@ -38,50 +46,55 @@
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
-    color: #03dac6;
+    color: #ffffff;
 }
 
 /* Campos de entrada */
 .form-group input {
     width: 100%;
-    padding: 10px;
-    border: 2px solid #03dac6;
-    border-radius: 5px;
-    background:white;
-    color: #121212;
-    font-size: 14px;
-    transition: border 0.3s;
+    padding: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 16px;
+    transition: all 0.3s;
+    box-shadow: inset 0px 0px 8px rgba(255, 255, 255, 0.2);
 }
 
 /* Efecto al enfocar los inputs */
 .form-group input:focus {
-    border-color: #ff0266;
+    border-color: #ffffff;
     outline: none;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
 }
 
 /* Botón de enviar */
 button {
     width: 100%;
     padding: 12px;
-    background: #03dac6;
+    background: linear-gradient(145deg, #222222, #333333); /* Botón con profundidad */
     border: none;
-    color: #121212;
+    color: #ffffff;
     font-size: 16px;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.3);
 }
 
 /* Efecto hover en el botón */
 button:hover {
-    background: #00bfa5;
+    background: linear-gradient(145deg, #333333, #444444);
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.6);
 }
 
 /* Botón deshabilitado */
 button:disabled {
-    background: #ff0266;
+    background: #444444;
     cursor: not-allowed;
+    box-shadow: none;
 }
 
 /* Responsive */
